@@ -35,21 +35,28 @@ a: 'false' - since en empty string is not the same as a string with a space char
 a: 'true' - since we just set 'x = true' it should return 'true'
 
 **g)** `var x; x == 'undefined'`
-a: false
+a: false - since we declared the variable x, while it has no value, it is in fact defined
 
 **h)** `'9'<'10'`
+a: false - because they are both a 'string', strings are ordered alphabetically (1 before 9) and therefore, 10 comes before 9
 
 **i)** `typeof x + 1 === "number"`
+a: false - x being undefined, typeof is 'undefined1'
 
 **j)** `typeof x % 2 === "number"`
+a: false - x being undefined, typeof is 'NaN'
 
 **k)** `typeof (x % 2) === "number"`
+a: false - x being undefined, typeof is 'NaN'
 
 **l)** `x++ == ++x`
+a: false - but I am unclear as to why since both return "number" for typeof
 
 **m)** `++x == x++`
+a: true - but I am unclear as to why
 
 **n)** `"1"+x == 1+x`
+a: 
 
 **o)** `"0"+1 == 1`
 
@@ -69,10 +76,16 @@ Assume variables x, y, and z are numbers.
 
 **a)**
 Write an expression for the mean (i.e. average) of x, y, and z.
+a: (a+b+c)/3
 
 **b)**
 Write a series of expressions to adjust each of x, y, and z halfway toward their mean.
 That is, reset the value of each variable to something based on its previous value.
+a:
+var avg = (a+b+c)/3;
+a = ((avg-a)/2)+a
+b = ((avg-b)/2)+b
+c = ((avg-c)/2)+c
 
 ---
 
@@ -87,6 +100,7 @@ Suppose you're encoding geometric shapes in a Cartesian (2D) coordinate system, 
 
 **a)**
 Write an expression for the rectangle's area.
+
 
 **b)**
 Write an expression which is true if the rectangle is taller than it is wide, and false otherwise.
