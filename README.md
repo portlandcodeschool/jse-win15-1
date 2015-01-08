@@ -17,18 +17,25 @@ Some of these are tricky!  Don't trust your first instinct.
 
 
 **a)** `"1" == 1`
+a: 'true' - 'string' 1 is "close enough" to 'number' 1
 
 **b)** `"1" === 1`
+a: 'false' - 'string' 1 is not, strictly speaking, the same as 'number' 1
 
 **c)** `x == 'x'`
+a: 'undefined' - since no variable x has been defined. If the variable x **has** been defined, it should return 'false' unless the var x is set to "x"
 
 **d)** `x == (x+'')`
+a: 'undefined' - since no variable x has been defined. If the variable x **has** been defined, it should return 'false' unless the var x is set to "x"
 
 **e)** `'' == ' '`
+a: 'false' - since en empty string is not the same as a string with a space character in it
 
 **f)** `x = true`
+a: 'true' - since we just set 'x = true' it should return 'true'
 
 **g)** `var x; x == 'undefined'`
+a: false
 
 **h)** `'9'<'10'`
 
