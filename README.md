@@ -17,46 +17,32 @@ Some of these are tricky!  Don't trust your first instinct.
 
 
 **a)** `"1" == 1`
-a: 'true' - 'string' 1 is "close enough" to 'number' 1
 
 **b)** `"1" === 1`
-a: 'false' - 'string' 1 is not, strictly speaking, the same as 'number' 1
 
 **c)** `x == 'x'`
-a: 'undefined' - since no variable x has been defined. If the variable x **has** been defined, it should return 'false' unless the var x is set to "x"
 
 **d)** `x == (x+'')`
-a: 'undefined' - since no variable x has been defined. If the variable x **has** been defined, it should return 'false' unless the var x is set to "x"
 
 **e)** `'' == ' '`
-a: 'false' - since en empty string is not the same as a string with a space character in it
 
 **f)** `x = true`
-a: 'true' - since we just set 'x = true' it should return 'true'
 
 **g)** `var x; x == 'undefined'`
-a: false - since we declared the variable x, while it has no value, it is in fact defined
 
 **h)** `'9'<'10'`
-a: false - because they are both a 'string', strings are ordered alphabetically (1 before 9) and therefore, 10 comes before 9
 
 **i)** `typeof x + 1 === "number"`
-a: false - x being undefined, typeof is 'undefined1'
 
 **j)** `typeof x % 2 === "number"`
-a: false - x being undefined, typeof is 'NaN'
 
 **k)** `typeof (x % 2) === "number"`
-a: false - x being undefined, typeof is 'NaN'
 
 **l)** `x++ == ++x`
-a: false - but I am unclear as to why since both return "number" for typeof
 
 **m)** `++x == x++`
-a: true - but I am unclear as to why
 
 **n)** `"1"+x == 1+x`
-a: 
 
 **o)** `"0"+1 == 1`
 
