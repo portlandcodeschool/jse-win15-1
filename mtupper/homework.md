@@ -187,7 +187,8 @@ Write an expression for a string expressing the proper form of an improper fract
 > var n,
 >     d;
 >
-> var i = Math.floor(n/d),
->     n %= d,
+> var i = (Math.floor(n/d)).toString(),
+>     n = (n % d).toString(),
+>     d = d.toString(),
 >     proper = i + " " + n "/" + d;
 > ```
