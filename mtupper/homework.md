@@ -12,38 +12,38 @@ Some of these are tricky!  Don't trust your first instinct.
 
 **a)** `"1" == 1`<br />
 > **true** - string 1 is "similar enough" to number 1<br />
-<br />
+
 **b)** `"1" === 1`<br />
 > **false** - string 1 is, strictly speaking, not the same as number 1<br />
-<br />
+
 **c)** `x == 'x'`<br />
 > **false** - the only way to make this true would be to declare a variable x with a value of the string 'x'<br />
 > `var x = "x"`<br />
-<br />
+
 **d)** `x == (x+'')`<br />
 > **true** - since adding nothing (empty string `''`) to the variable x won't change its value<br />
-<br />
+
 **e)** `'' == ' '`<br />
 > **false** - because an empty string is not the same as a string consisting of a space character<br />
-<br />
+
 **f)** `x = true`<br />
 > **true** - since we just set the value of x equal to true, it is indeed true<br />
-<br />
+
 **g)** `var x; x == 'undefined'`
 > **false** - while it was not assigned a value, the variable x has been defined, same as assigning value `''`<br />
-<br />
+
 **h)** `'9'<'10'`<br />
 > **false** - because they are both a `"string"`, strings are ordered alphabetically (1 before 9) and therefore, 10 comes before 9<br />
-<br />
+
 **i)** `typeof x + 1 === "number"`<br />
 > **not sure why this is not true, getting false in console** <br />
-<br />
+
 **j)** `typeof x % 2 === "number"`<br />
 > **not sure why this is not true, getting false in console** <br />
-<br />
+
 **k)** `typeof (x % 2) === "number"` <br />
 > **not sure why this is not true, getting false in console** <br />
-<br />
+
 **l)** `x++ == ++x`
 
 **m)** `++x == x++`
