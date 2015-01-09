@@ -36,13 +36,13 @@ Some of these are tricky!  Don't trust your first instinct.
 > **false** - because they are both a `"string"`, strings are ordered alphabetically (1 before 9) and therefore, 10 comes before 9<br />
 
 **i)** `typeof x + 1 === "number"`<br />
-> **not sure why this is not true, getting false in console** <br />
+> *not sure why this **is not true**, getting false in console* <br />
 
 **j)** `typeof x % 2 === "number"`<br />
-> **not sure why this is not true, getting false in console** <br />
+> *not sure why this **is not true**, getting false in console* <br />
 
 **k)** `typeof (x % 2) === "number"` <br />
-> **not sure why this is not true, getting false in console** <br />
+> *not sure why this **is true**, getting false in console* <br />
 
 **l)** `x++ == ++x`
 
@@ -68,16 +68,18 @@ Assume variables x, y, and z are numbers.
 
 **a)**
 Write an expression for the mean (i.e. average) of x, y, and z.
-a: (a+b+c)/3
+`var avg = (x+y+z)/3`
 
 **b)**
 Write a series of expressions to adjust each of x, y, and z halfway toward their mean.
 That is, reset the value of each variable to something based on its previous value.
-a:
-var avg = (a+b+c)/3;
-a = ((avg-a)/2)+a
-b = ((avg-b)/2)+b
-c = ((avg-c)/2)+c
+
+```
+var avg = (x+y+z)/3;
+var x += (avg-x)/2;
+var y += (avg-y)/2;
+var z += (avg-z)/2;
+```
 
 ---
 
@@ -92,6 +94,11 @@ Suppose you're encoding geometric shapes in a Cartesian (2D) coordinate system, 
 
 **a)**
 Write an expression for the rectangle's area.
+> ```
+> var w = (r - l);
+> var h = (t - b);
+> var area = w * h;
+> ```
 
 
 **b)**
