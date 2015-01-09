@@ -36,13 +36,22 @@ Some of these are tricky!  Don't trust your first instinct.
 > **false** - because they are both a `"string"`, strings are ordered alphabetically (1 before 9) and therefore, 10 comes before 9<br />
 
 **i)** `typeof x + 1 === "number"`<br />
-> *not sure why this **is not true**, getting false in console* <br />
+> **false** - ```typeof x + 1``` returns "number1", adding 1 to the result of typeof x<br />
 
 **j)** `typeof x % 2 === "number"`<br />
-> *not sure why this **is not true**, getting false in console* <br />
+> **false** - ```typeof x % 2``` returns NaN because it is the same as ```"number" % 2```<br />
 
 **k)** `typeof (x % 2) === "number"` <br />
-> *not sure why this **is true**, getting true in console* <br />
+> **true** - makes sense when x is already a number
+>
+> ```javascript
+> var x = 4;
+> typeof (x % 2); // returns "number"
+>
+> var x = "text";
+> (x % 2); // returns NaN, but...
+> typeof (x % 2); // returns "number"
+>```
 
 **l)** `x++ == ++x`
 > **false** - value of x is returned and then incremented and incremented again before being compared to the new value of x
@@ -86,7 +95,7 @@ Some of these are tricky!  Don't trust your first instinct.
 > ```
 
 **p)** `(typeof (x+1))===(typeof x)`
-> **true** - comparing '"numbers"'
+> **true** - comparing `"numbers"`
 > ```javascript
 > var x = 4;
 > (typeof (x + 1)); // is same as (5) and returns "number"
