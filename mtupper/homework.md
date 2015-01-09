@@ -42,21 +42,62 @@ Some of these are tricky!  Don't trust your first instinct.
 > *not sure why this **is not true**, getting false in console* <br />
 
 **k)** `typeof (x % 2) === "number"` <br />
-> *not sure why this **is true**, getting false in console* <br />
+> *not sure why this **is true**, getting true in console* <br />
 
 **l)** `x++ == ++x`
+> **false** - value of x is returned and then incremented and incremented again before being compared to the new value of x
+>
+> ```javascript
+> var x = 1;
+> var y = x++; // y = 1, x = 2
+> var z = ++x; // z = 3, x = 3
+> y == z; // is false
+> ```
 
 **m)** `++x == x++`
+> **true** - value of x is incremented and returned, new value of x is compared to x (true), then incremented.
+>
+> ```javascript
+> var x = 1;
+> var y = ++x; // y = 2, x = 2;
+> var z = x++; // z = 2, x = 3;
+> y == z; // is true
+> ```
 
 **n)** `"1"+x == 1+x`
+> **false** - treats addition of strings different from addition of integers
+>
+> ```javascript
+> var x = 4;
+> "1" + x; // returns "14"
+>
+> var x = 4;
+> 1 + x; // returns 5
+>
+> "14" == 5; // returns false
+> ```
 
 **o)** `"0"+1 == 1`
+> **true** - will convert strings to numbers for comparison with non-strict (==) equality
+> ```javascript
+> "0" + 1; // returns "01"
+>
+> "01" == 1; // returns true
+> ```
 
 **p)** `(typeof (x+1))===(typeof x)`
+> **true** - comparing '"numbers"'
+> ```javascript
+> var x = 4;
+> (typeof (x + 1)); // is same as (5) and returns "number"
+> (typeof x); // is same as 4 and also returns "number"
+> ```
 
 **q)** `(x*1 == x) || ((typeof x) != "number")`
+> **true** - since `(x*1 == x)` evaluates to true, second statement is optional (or `||`), it returns true without needing to evaluate the second statement
 
 **r)** `(x=(typeof (x+(typeof x))))==x`
+> **true** - the statement on the left with always result in `"string"` first and then compare it to itself
 
 ---
 
