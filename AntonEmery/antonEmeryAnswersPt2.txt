@@ -5,6 +5,11 @@ All of the following can be solved with ordinary expressions and global variable
 Assume variables x, y, and z are numbers.
 
 a) Write an expression for the mean (i.e. average) of x, y, and z.
-(x + y + z) / 3
+ (x + y + z) / 3
 
 b) Write a series of expressions to adjust each of x, y, and z halfway toward their mean. That is, reset the value of each variable to something based on its previous value.
+x = (x - avg) / 2
+y = (y - avg) / 2
+z = (z - avg) / 2
+
+3 + 6 + 9  avg 6
