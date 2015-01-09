@@ -61,16 +61,10 @@ Assume variables x, y, and z are numbers.
 
 **a)**
 Write an expression for the mean (i.e. average) of x, y, and z.
-a: (a+b+c)/3
 
 **b)**
 Write a series of expressions to adjust each of x, y, and z halfway toward their mean.
 That is, reset the value of each variable to something based on its previous value.
-a:
-var avg = (a+b+c)/3;
-a = ((avg-a)/2)+a
-b = ((avg-b)/2)+b
-c = ((avg-c)/2)+c
 
 ---
 
@@ -85,7 +79,6 @@ Suppose you're encoding geometric shapes in a Cartesian (2D) coordinate system, 
 
 **a)**
 Write an expression for the rectangle's area.
-
 
 **b)**
 Write an expression which is true if the rectangle is taller than it is wide, and false otherwise.

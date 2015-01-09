@@ -1,10 +1,6 @@
 ### Homework #1
+
 (Due Monday 1/12)
-
-You need to turn in this homework by cloning this repo, making a new branch with your solutions, pushing to github, and issuing a pull request.
-For details, follow the instructions [here](http://portlandcodeschool.github.io/jse/2015/01/07/command-line-and-git-slides/#/14).
-
-Please also read the [learning objectives](objectives.md) for this week.
 
 ---
 
@@ -14,14 +10,11 @@ If the output depends on the value of x, identify the conditions when the expres
 
 Some of these are tricky!  Don't trust your first instinct.
 
-
 **a)** `"1" == 1`
-```javascript
-function test() {
-  console.log("notice the blank line before this function?");
-}
-```
+**true** - string 1 is "similar enough" to number 1
+
 **b)** `"1" === 1`
+**false** - string 1 is, strictly speaking, not the same as number 1
 
 **c)** `x == 'x'`
 
