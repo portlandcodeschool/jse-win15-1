@@ -68,13 +68,15 @@ Assume variables x, y, and z are numbers.
 
 **a)**
 Write an expression for the mean (i.e. average) of x, y, and z.<br />
-> `var avg = (x+y+z)/3;`
+> ```javascript
+> var avg = (x+y+z)/3;
+> ```
 
 **b)**
 Write a series of expressions to adjust each of x, y, and z halfway toward their mean.
 That is, reset the value of each variable to something based on its previous value.
 
-> ```
+> ```javascript
 > var avg = (x+y+z)/3;
 > var x += (avg-x)/2;
 > var y += (avg-y)/2;
@@ -95,16 +97,17 @@ Suppose you're encoding geometric shapes in a Cartesian (2D) coordinate system, 
 **a)**
 Write an expression for the rectangle's area.
 > ```javascript
-> var w = (r - l);
-> var h = (t - b);
-> var area = w * h;
+> var w = (r - l),
+>     h = (t - b),
+>     a = w * h;
 > ```
 
 **b)**
 Write an expression which is true if the rectangle is taller than it is wide, and false otherwise.
 > ```javascript
-> var w = (r - l);
-> var h = (t - b);
+> var w = (r - l),
+>     h = (t - b);
+>
 > if ( h > w );
 > ```
 
@@ -116,9 +119,10 @@ Write an expression for the circumference of the biggest circle which can fit in
 >
 > if ( h > w ) {
 >     r = (w / 2);
-> } else {
->     r = (h / 2);
 > }
+> else {
+>     r = (h / 2);
+> };
 >
 > C = (2 * Math.PI * r);
 > ```
@@ -130,7 +134,7 @@ Write an expression for the area of the smallest circle which completely enclose
 > var w = (r - l),
 >     h = (t - b);
 >
-> r = Math.sqrt( Math.pow((w / 2), 2) + Math.pow((w / 2), 2) );
+> r = Math.sqrt( Math.pow((w / 2), 2) + Math.pow((h / 2), 2) );
 >
 > C = (2 * Math.PI * r);
 > ```
@@ -139,6 +143,15 @@ Write an expression for the area of the smallest circle which completely enclose
 Imagine subdividing your rectangle into 3 equal rows and 3 equal columns, which would create 9 smaller rectangles, identical in shape but varying by position.
 Define four new variables describing the centermost small rectangle.
 (_Hint: one of the many solutions is very similar to the solution of **2b** above._)
+
+> ```javascript
+> var w = ((r - l) / 3),
+>     h = ((t - b) / 3);
+>
+> ~~r = Math.sqrt( Math.pow((w / 2), 2) + Math.pow((h / 2), 2) );~~
+>
+> ~~C = (2 * Math.PI * r);~~
+> ```
 
 ---
 
