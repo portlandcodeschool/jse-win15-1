@@ -1,0 +1,54 @@
+SECTION 1)
+
+a) "1" == 1
+true - string 1 is "close enough" to number 1
+
+b) "1" === 1
+false - string 1 is not, strictly speaking, the same as number 1
+
+c) x == 'x'
+'undefined' - since no variable x has been defined. If the variable x **has** been defined, it should return false unless the var x is set to "x"
+
+d) x == (x+'')
+undefined - since no variable x has been defined. If the variable x **has** been defined, it should return false unless the var x is set to "x"
+
+e) '' == ' '
+false - since en empty string is not the same as a string with a space character in it
+
+f) x = true
+true - since we just set 'x = true' it should return 'true'
+
+g) var x; x == 'undefined'
+false - since we declared the variable x, while it has no value, it is in fact defined
+
+h) '9'<'10'
+false - because they are both a 'string', strings are ordered alphabetically (1 before 9) and therefore, 10 comes before 9
+
+i) typeof x + 1 === "number"
+false - x being undefined, typeof is 'undefined1'
+
+j) typeof x % 2 === "number"
+false - x being undefined, typeof is 'NaN'
+
+k) typeof (x % 2) === "number"
+false - x being undefined, typeof is 'NaN'
+
+l) x++ == ++x
+false - but I am unclear as to why since both return 'number' for typeof and both presumably are incrementing x by 1 ??? 
+
+m) ++x == x++
+true - in both cases x is incremented by 1
+
+n) "1"+x == 1+x
+false, x is not defined and therefore adding a number 1 or string of number "1" continues to be undefined 
+
+o) "0"+1 == 1
+true, string "0" is close enough to 0 to be treated as a number and therefore anle to be added to 1
+
+p) (typeof (x+1))===(typeof x)
+uncaught, x not defined
+
+q) (x*1 == x) || ((typeof x) != "number")
+
+
+r) (x=(typeof (x+(typeof x))))==x

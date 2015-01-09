@@ -12,11 +12,15 @@ Please also read the [learning objectives](objectives.md) for this week.
 Predict the output of each of the following expressions, and explain the rules which determine it.
 If the output depends on the value of x, identify the conditions when the expression will output true.  Assume the cases are independent, and x is reset to an unknown value before each.
 
-Some of these are tricky!  Don't trust your first instinct.  
+Some of these are tricky!  Don't trust your first instinct.
 
 
 **a)** `"1" == 1`
-
+```javascript
+function test() {
+  console.log("notice the blank line before this function?");
+}
+```
 **b)** `"1" === 1`
 
 **c)** `x == 'x'`
@@ -45,7 +49,7 @@ Some of these are tricky!  Don't trust your first instinct.
 
 **o)** `"0"+1 == 1`
 
-**p)** `(typeof (x+1))===(typeof x)`	
+**p)** `(typeof (x+1))===(typeof x)`
 
 **q)** `(x*1 == x) || ((typeof x) != "number")`
 
