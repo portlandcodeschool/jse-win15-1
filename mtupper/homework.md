@@ -16,15 +16,20 @@ Some of these are tricky!  Don't trust your first instinct.
 **b)** `"1" === 1`<br />
 **false** - string 1 is, strictly speaking, not the same as number 1
 
-**c)** `x == 'x'`
+**c)** `x == 'x'`<br />
+**false** - the only way to make this true would be to declare a variable x with a value of the string 'x'<br />`var x = "x"`<br />
 
-**d)** `x == (x+'')`
+**d)** `x == (x+'')`<br />
+**true** - since adding nothing (empty string `''`) to the variable x won't change its value
 
-**e)** `'' == ' '`
+**e)** `'' == ' '`<br />
+**false** - because an empty string is not the same as a string consisting of a space character
 
-**f)** `x = true`
+**f)** `x = true`<br />
+**true** - since we just set the value of x equal to true, it is indeed true
 
 **g)** `var x; x == 'undefined'`
+
 
 **h)** `'9'<'10'`
 
