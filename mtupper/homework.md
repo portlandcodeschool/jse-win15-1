@@ -10,10 +10,10 @@ If the output depends on the value of x, identify the conditions when the expres
 
 Some of these are tricky!  Don't trust your first instinct.
 
-**a)** `"1" == 1`\n
+**a)** `"1" == 1`<br />
 **true** - string 1 is "similar enough" to number 1
 
-**b)** `"1" === 1`\n
+**b)** `"1" === 1`<br />
 **false** - string 1 is, strictly speaking, not the same as number 1
 
 **c)** `x == 'x'`
