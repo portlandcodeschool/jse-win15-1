@@ -47,7 +47,9 @@ Some of these are tricky!  Don't trust your first instinct.
 > ```javascript
 > var x = 4;
 > typeof (x % 2); // returns "number"
->
+> ```
+> However, I am not clear why this `typeof` returns `"number"`
+>```javascript
 > var x = "text";
 > (x % 2); // returns NaN, but...
 > typeof (x % 2); // returns "number"
