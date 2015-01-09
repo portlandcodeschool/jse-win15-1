@@ -189,5 +189,5 @@ Write an expression for a string expressing the proper form of an improper fract
 >
 > var i = Math.floor(n/d),
 >     n %= d,
->     proper = w + " " + n "/" + d;
+>     proper = i + " " + n "/" + d;
 > ```
