@@ -12,11 +12,13 @@ c) x == 'x'
 will evaluate to true if x is a number, since == is truish.
 
 d) x == (x+'')
+true if x is a number. 5+''='5' which is seen as equal to 5. also true if x is a string. 
 
 e) '' == ' '
 false. '' is an empty string and is false. 
 
 f) x = true
+
 
 g) var x; x == 'undefined'
 variable x has not been assigned a value, which is why it is undefined 
@@ -55,9 +57,7 @@ returns true if x is a number. the left side evaluates to true which is enough. 
 r) (x=(typeof (x+(typeof x))))==x
 
 
-(x=(typeof (5+('number'))))==x
 
-(5=(typeof (5number))==5
 
 
 
