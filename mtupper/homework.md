@@ -129,10 +129,10 @@ Write a series of expressions to adjust each of x, y, and z halfway toward their
 That is, reset the value of each variable to something based on its previous value.
 
 > ```javascript
-> var avg = (x+y+z)/3;
-> var x += (avg-x)/2;
-> var y += (avg-y)/2;
-> var z += (avg-z)/2;
+> var avg = (x+y+z)/3,
+>     x += (avg-x)/2,
+>     y += (avg-y)/2,
+>     z += (avg-z)/2;
 > ```
 
 ---
@@ -226,21 +226,23 @@ Imagine that the squares of an ordinary checkerboard are numbered in two differe
 > var r,
 >     c;
 >
-> var n = r + (c * 8);
+> var n = c + (r * 8);
 >```
 
 **b)**  Given N, find R.  Write an expression for R which contains N.
 
 >```javascript
 > var n;
-> var r = n % 8;
+>
+> var r = Math.floor(n / 8);
 >```
 
 **c)**  Given N, find C.  Write an expression for C which contains N.
 
 >```javascript
 > var n;
-> var c = (n - (n % 8)) / 8;
+>
+> var c = n % 8;
 >```
 
 **d)**  Assume the squares are colored black and white, with the upper-left square black.
@@ -249,8 +251,21 @@ Write an expression to set a variable _color_ to either 'black' or 'white', desc
 
 >```javascript
 > // PENDING - just a placeholder
-> var n;
-> var r = n % 8;
+> var r,
+>     c,
+>
+> var n = c + (r * 8),
+>     r = n % 8,
+>     color;
+>
+> if ( ((r % 2 == 0) && (n % 2 == 0)) ||
+>      ((r % 2 != 0) && (n % 2 != 0)) ) {
+>      color = "black";
+> }
+> else {
+>      color = "white";
+> }
+>
 >```
 
 
