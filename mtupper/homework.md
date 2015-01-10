@@ -200,14 +200,18 @@ Define four new variables describing the centermost small rectangle.
 (_Hint: one of the many solutions is very similar to the solution of **2b** above._)
 
 > ```javascript
-> // PENDING - just a placeholder
+> var l,
+>     r,
+>     t,
+>     b;
+>
 > var w = ((r - l) / 3),
 >     h = ((t - b) / 3);
 >
-> var l += w,
->     r -= w,
->     t -= h,
->     b += h;
+> l += w;
+> r -= w;
+> t -= h;
+> b += h;
 > ```
 
 ---
