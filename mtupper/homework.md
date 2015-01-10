@@ -250,7 +250,6 @@ Write an expression to set a variable _color_ to either 'black' or 'white', desc
 (_Hint: If you prefer, you may use a pair of conditional statements instead of a single expression._)
 
 >```javascript
-> // PENDING - just a placeholder
 > var r,
 >     c,
 >
