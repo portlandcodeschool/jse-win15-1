@@ -254,7 +254,6 @@ Write an expression to set a variable _color_ to either 'black' or 'white', desc
 >     c,
 >
 > var n = c + (r * 8),
->     r = n % 8,
 >     color;
 >
 > if ( ((r % 2 == 0) && (n % 2 == 0)) ||
