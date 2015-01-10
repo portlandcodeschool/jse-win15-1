@@ -148,6 +148,7 @@ Suppose you're encoding geometric shapes in a Cartesian (2D) coordinate system, 
 
 **a)**
 Write an expression for the rectangle's area.
+
 > ```javascript
 > var w = (r - l),
 >     h = (t - b),
@@ -156,6 +157,7 @@ Write an expression for the rectangle's area.
 
 **b)**
 Write an expression which is true if the rectangle is taller than it is wide, and false otherwise.
+
 > ```javascript
 > var w = (r - l),
 >     h = (t - b);
@@ -165,6 +167,7 @@ Write an expression which is true if the rectangle is taller than it is wide, an
 
 **c)**
 Write an expression for the circumference of the biggest circle which can fit inside the rectangle.  (Hint: you'll need logic similar to that in **b**.)
+
 > ```javascript
 > var w = (r - l),
 >     h = (t - b);
@@ -197,6 +200,7 @@ Define four new variables describing the centermost small rectangle.
 (_Hint: one of the many solutions is very similar to the solution of **2b** above._)
 
 > ```javascript
+> // PENDING - just a placeholder
 > var w = ((r - l) / 3),
 >     h = ((t - b) / 3);
 >
@@ -216,6 +220,7 @@ Imagine that the squares of an ordinary checkerboard are numbered in two differe
 * Each square has a unique integer number N from 0 to 63.  These numbers run sequentially left-to-right one row at a time, top to bottom.  Therefore the upper-left square has N==0 and the bottom-right has N==63.
 
 **a)**  Given a particular R and C, find the corresponding N.  That is, write an expression for variable N containing variables R and C.
+
 > ```javascript
 > var r,
 >     c;
@@ -224,23 +229,27 @@ Imagine that the squares of an ordinary checkerboard are numbered in two differe
 >```
 
 **b)**  Given N, find R.  Write an expression for R which contains N.
+
 >```javascript
 > var n;
-> r = n % 8;
+> var r = n % 8;
 >```
 
 **c)**  Given N, find C.  Write an expression for C which contains N.
+
 >```javascript
 > var n;
-> c = (n - (n % 8)) / 8;
+> var c = (n - (n % 8)) / 8;
 >```
 
 **d)**  Assume the squares are colored black and white, with the upper-left square black.
 Write an expression to set a variable _color_ to either 'black' or 'white', describing the square identified by variables R,C, and N.
 (_Hint: If you prefer, you may use a pair of conditional statements instead of a single expression._)
+
 >```javascript
+> // PENDING - just a placeholder
 > var n;
-> r = n % 8;
+> var r = n % 8;
 >```
 
 
@@ -261,5 +270,5 @@ Write an expression for a string expressing the proper form of an improper fract
 > var i = (Math.floor(n/d)).toString(),
 >     n = (n % d).toString(),
 >     d = d.toString(),
->     proper = i + " " + n "/" + d;
+>     pf = i + " " + n "/" + d;
 > ```
