@@ -216,14 +216,33 @@ Imagine that the squares of an ordinary checkerboard are numbered in two differe
 * Each square has a unique integer number N from 0 to 63.  These numbers run sequentially left-to-right one row at a time, top to bottom.  Therefore the upper-left square has N==0 and the bottom-right has N==63.
 
 **a)**  Given a particular R and C, find the corresponding N.  That is, write an expression for variable N containing variables R and C.
+> ```javascript
+> var r,
+>     c;
+>
+> var n = r + (c * 8);
+>```
 
 **b)**  Given N, find R.  Write an expression for R which contains N.
+>```javascript
+> var n;
+> r = n % 8;
+>```
 
 **c)**  Given N, find C.  Write an expression for C which contains N.
+>```javascript
+> var n;
+> c = (n - (n % 8)) / 8;
+>```
 
 **d)**  Assume the squares are colored black and white, with the upper-left square black.
 Write an expression to set a variable _color_ to either 'black' or 'white', describing the square identified by variables R,C, and N.
 (_Hint: If you prefer, you may use a pair of conditional statements instead of a single expression._)
+>```javascript
+> var n;
+> r = n % 8;
+>```
+
 
 ---
 
