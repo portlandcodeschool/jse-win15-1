@@ -204,9 +204,10 @@ Define four new variables describing the centermost small rectangle.
 > var w = ((r - l) / 3),
 >     h = ((t - b) / 3);
 >
-> ~~r = Math.sqrt( Math.pow((w / 2), 2) + Math.pow((h / 2), 2) );~~
->
-> ~~C = (2 * Math.PI * r);~~
+> var l += w,
+>     r -= w,
+>     t -= h,
+>     b += h;
 > ```
 
 ---
