@@ -18,7 +18,7 @@ e) '' == ' '
 false. '' is an empty string and is false. 
 
 f) x = true
-
+true unless x is 0, NaN, or an empty string
 
 g) var x; x == 'undefined'
 variable x has not been assigned a value, which is why it is undefined 
@@ -31,7 +31,6 @@ always false. typeof x will either be a number, string, or boolean. adding 1 to 
 
 j) typeof x % 2 === "number"
 always false
-
 
 k) typeof (x % 2) === "number"
 will produce true when x is a number. typeof the remainder is 'number'. will also produce true when x is a string, which results in NaN. typeof NaN returns 'number'
