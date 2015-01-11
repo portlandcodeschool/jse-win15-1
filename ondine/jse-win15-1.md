@@ -108,11 +108,8 @@ Write a series of expressions to adjust each of x, y, and z halfway toward their
 That is, reset the value of each variable to something based on its previous value.
 
 ```var mean = (x + y + z)/3;
-
 x = (mean-x)/2 + x;
-
 y = (mean-y)/2 + y;
-
 z = (mean-z)/2 + z;```
 
 ---
@@ -135,7 +132,6 @@ Write an expression for the rectangle's area.
 Write an expression which is true if the rectangle is taller than it is wide, and false otherwise.
 
 ```if (t + b) > (r - l);
-
   areaRect == true```
 
 **c)**
@@ -154,11 +150,8 @@ Define four new variables describing the centermost small rectangle.
 (_Hint: one of the many solutions is very similar to the solution of **2b** above._)
 
 ```var l1 = l + ((r - l)/3);
-
 var r1 = r - ((r - l)/3);
-
 var t1 = t + ((b - t)/3);
-
 var b1 = b - ((b - t)/3);```
 
 ---
