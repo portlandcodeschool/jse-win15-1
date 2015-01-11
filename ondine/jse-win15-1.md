@@ -126,19 +126,38 @@ Suppose you're encoding geometric shapes in a Cartesian (2D) coordinate system, 
 **a)**
 Write an expression for the rectangle's area.
 
+var areaRect = (r - l) * (t + b)
+
 **b)**
 Write an expression which is true if the rectangle is taller than it is wide, and false otherwise.
+
+if (t + b) > (r - l);
+  areaRect == true
 
 **c)**
 Write an expression for the circumference of the biggest circle which can fit inside the rectangle.  (Hint: you'll need logic similar to that in **b**.)
 
+var circleCircumference = Math.PI * (r - l)
+
 **d)**
 Write an expression for the area of the smallest circle which completely encloses (i.e. circumscribes) the rectangle.
+
+var circleArea = Math.PI * ((r - l)e2 / 2)e2
 
 **e)**
 Imagine subdividing your rectangle into 3 equal rows and 3 equal columns, which would create 9 smaller rectangles, identical in shape but varying by position.
 Define four new variables describing the centermost small rectangle.
 (_Hint: one of the many solutions is very similar to the solution of **2b** above._)
+
+var mean = (x + y + z)/3;
+x = (mean-x)/2 + x;
+y = (mean-y)/2 + y;
+z = (mean-z)/2 + z;
+
+var l1 = l + ((r - l)/3);
+var r1 = r - ((r - l)/3);
+var t1 = t + ((b - t)/3);
+var b1 = b - ((b - t)/3);
 
 ---
 
@@ -147,6 +166,8 @@ Define four new variables describing the centermost small rectangle.
 Imagine that the squares of an ordinary checkerboard are numbered in two different ways:
 
 * Each square has integer coordinates _(R,C)_ describing its row and column.  Both values should be in the range 0..7, so that the upper-left square is at (0,0) and the bottom-right is at (7,7).
+
+
 
 * Each square has a unique integer number N from 0 to 63.  These numbers run sequentially left-to-right one row at a time, top to bottom.  Therefore the upper-left square has N==0 and the bottom-right has N==63.
 
