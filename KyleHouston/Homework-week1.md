@@ -17,58 +17,76 @@ Some of these are tricky!  Don't trust your first instinct.
 
 
 **a)** `"1" == 1`
-	>Output: "true" The == operator equates the string 1 close enough to the numerical 1 to return "true."
+
+	> Output: "true" The == operator equates the string 1 close enough to the numerical 1 to return "true."
 
 **b)** `"1" === 1`
-	>Output: "false" The === notices that the string 1 is not the same data type as numerical 1.
+
+	> Output: "false" The === notices that the string 1 is not the same data type as numerical 1.
 
 **c)** `x == 'x'`
+
 	>Output: "true" The true output will happen when x is equal to the string "x" otherwise the out put should always be false because only the string "x" can be equal to the string "x."
 
 **d)** `x == (x+'')`
-	>Output: "true" The output will be true because x + ' ' is close enough to x for the == operator (like in a))
+
+	> Output: "true" The output will be true because x + ' ' is close enough to x for the == operator (like in a))
 
 **e)** `'' == ' '`
-	>Output: "false" The output should be false as the two strings are not the same (or close enough for ==). 
+
+	> Output: "false" The output should be false as the two strings are not the same (or close enough for ==). 
 
 **f)** `x = true`
-	>Output: "true" The output will be true because we are simply assing the boolean true to x.
+
+	> Output: "true" The output will be true because we are simply assing the boolean true to x.
 
 **g)** `var x; x == 'undefined'`
-	>Output: "false" The output will be false as the string "undefined" is not equal to a variable that is actually undefined.
+
+	> Output: "false" The output will be false as the string "undefined" is not equal to a variable that is actually undefined.
 
 **h)** `'9'<'10'`
-	>Output: "false" the output will be false, when comparing strings Javascript compares the first character of each string. 
+
+	> Output: "false" the output will be false, when comparing strings Javascript compares the first character of each string. 
 
 **i)** `typeof x + 1 === "number"`
-	>Output: "false" The output will always be false as 'typeof x + 1' will always have a 1 on the end of the varibale type of x. 
+
+	> Output: "false" The output will always be false as 'typeof x + 1' will always have a 1 on the end of the varibale type of x. 
 
 **j)** `typeof x % 2 === "number"`
-	>Output: "false" The output will be false no matter what the value of x is bescause typeof outputs a string and the mod of a string returns NaN which is not equal to "number."
+
+	> Output: "false" The output will be false no matter what the value of x is bescause typeof outputs a string and the mod of a string returns NaN which is not equal to "number."
 
 **k)** `typeof (x % 2) === "number"`
-	>Output: "true" The output will always be true because even if x is a string, x % 2 will return NaN which is a "number" according to the typeof operator.
+
+	> Output: "true" The output will always be true because even if x is a string, x % 2 will return NaN which is a "number" according to the typeof operator.
 
 **l)** `x++ == ++x`
-	>Output: "false" The output is false because x is returned then incremented then incremented again before being compared.
+
+	> Output: "false" The output is false because x is returned then incremented then incremented again before being compared.
 
 **m)** `++x == x++`
-	>Output: "true" The output is true because x is first incremented then compared to the new value of x before being incremented yet again. 
+
+	> Output: "true" The output is true because x is first incremented then compared to the new value of x before being incremented yet again. 
 
 **n)** `"1"+x == 1+x`
-	>Output: "true" The output will be true if a string is assigned to x because adding a 1 to a string string will have the same effect whether 1 is a string or not. 
+
+	> Output: "true" The output will be true if a string is assigned to x because adding a 1 to a string string will have the same effect whether 1 is a string or not. 
 
 **o)** `"0"+1 == 1`
-	>Output: "true" The output is true because "0"+1 returns "01" and that is close enough to numerical 1 for the == operator.
+
+	> Output: "true" The output is true because "0"+1 returns "01" and that is close enough to numerical 1 for the == operator.
 
 **p)** `(typeof (x+1))===(typeof x)`
-	>Output: "true" The ouput is true because we are doing nothing to change the variable type in either of the typeof operators.
+
+	> Output: "true" The ouput is true because we are doing nothing to change the variable type in either of the typeof operators.
 
 **q)** `(x*1 == x) || ((typeof x) != "number")`
-	>Output: "true" the output is true because one side of the || will always be true. If x is a number then the left side is true and the output will be true. If x is a string then the left side is false and the right side is true. As long as atleast one statment is true the || operator will output true.
+
+	> Output: "true" the output is true because one side of the || will always be true. If x is a number then the left side is true and the output will be true. If x is a string then the left side is false and the right side is true. As long as atleast one statment is true the || operator will output true.
 
 **r)** `(x=(typeof (x+(typeof x))))==x`
-	>Output: "true" The output is true because the 2 nested typeof operators will always result in x = "string," then x == x will return "true."
+
+	> Output: "true" The output is true because the 2 nested typeof operators will always result in x = "string," then x == x will return "true."
 
 ---
 
