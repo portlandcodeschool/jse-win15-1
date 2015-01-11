@@ -14,79 +14,85 @@ Some of these are tricky!  Don't trust your first instinct.
 
 **a)** `"1" == 1`
 
-true. Number 1 is first converted to a string, then the values are compared.
+Always true. Nonempty string is truthy, and number other than 0 is truthy.
 
 **b)** `"1" === 1`
 
-false. The operator is strict equals - the operands must be of the same data type as well as value.
+Always false. The operator is strict equals - the operands must be of the same data type as well as value.
 
 **c)** `x == 'x'`
 
-false. `"x"` - x is a string.
+False. Any x value does not equal x that is a string. True only if x is assigned the value 'x'. (x = 'x')
 
 **d)** `x == (x+'')`
 
-true. x is the same as x plus an empty string.
+Always true. The value of x is the same as x plus an empty string.
 
 **e)** `'' == ' '`
 
-false. An empty string is not the same as a string that contains a spaceband.
+Always false. An empty string is not the same as a string that contains a spaceband.
 
 **f)** `x = true`
 
-true. Assignment operator.
+True. Boolean value.
 
 **g)** `var x; x == 'undefined'`
 
-false. The value of x has not been declared. The type of x is "undefined". (??)
+False. The value of x is not been declared, so its value is undefined. The type of x is "undefined".
 
 **h)** `'9'<'10'`
 
-false. Comparing two strings in order from left to right, 9 > 1.
+False. Comparing two strings in order from left to right, 9 !< 1.
 
 **i)** `typeof x + 1 === "number"`
 
-false. Type of x is "undefined". The result of undefined + 1 is not a number. If typeof x is "number", still false.
+Always false. Whatever x is, the result is not a number. If typeof x is "number", still false because without parentheses, typeof x + 1 returns a string "number1".
 
 **j)** `typeof x % 2 === "number"`
 
-false. Type of x is "undefined". The result is not a number. If typeof x is "number", still false.
+Always false. Whatever x is, the result is not a number. If typeof x is "number", still false
 
 **k)** `typeof (x % 2) === "number"`
 
-Type of x is "undefined". The result is not a number. Reference error. If x is assigned a number value, expression is true.
+Always true. Whatever x is, the type of the remainder is a number.
 
 **l)** `x++ == ++x`
 
-false. x++ evaluates to unincremented value of x. ++x evaluates to the incremented value of x.
+Always false. x++ evaluates to unincremented value of x. ++x evaluates to the incremented value of x.
 
 **m)** `++x == x++`
 
-false if x is not a number value. true if x is a number, the incremented value of x on the left equals the unincremented value on the right.
+False if x is not a number value. True if x is a number, because the incremented value of x on the left equals the unincremented value on the right.
 
 **n)** `"1"+x == 1+x`
 
-false if x is a number value. True if x is a string.
+Only true if x is a string. With any other value, type coercion returns a concatenated string "1value".
 
 **o)** `"0"+1 == 1`
 
-true. Type conversion. "0" converts to 0, then addition makes the result true.
+True. Type conversion. "0" converts to 0, then addition makes the result true.
+
+Or - "0" as a string is truthy, numbers other than 0 are truthy.
 
 **p)** `(typeof (x+1))===(typeof x)`
 
-true if the value of x is a number, a string or NaN. False if x is a boolean, undefined, or null.
+True if the value of x is a number, a string or NaN because the type is "number" for both sides.
+
+False if x is a Boolean, undefined, or null because (x + 1) converts its type to "number" while x is a type of "boolean", "undefined", or "object", respectively.
 
 **q)** `(x*1 == x) || ((typeof x) != "number")`
 
-true. False if x is NaN.
+True. If x is a number, then the left side is true. If anything else other than NaN, the typeof x is not a number.
+
+False only if x is NaN, because then the type of x is a number, and the left side is false.
 
 **r)** `(x=(typeof (x+(typeof x))))==x`
 
-true. Whatever the left side evaluates to, x is assigned that value, which is equal to x.
+Always true. Whatever the left side evaluates to, x is assigned that value, which is equal to x.
 
 ---
 
-All of the following can be solved with ordinary expressions and global variables with primitive values.  You don't need functions, loops, or other topics beyond our first two classes.
+All of the following can be solved with ordinary expressions and global variables with primitive values. You don't need functions, loops, or other topics beyond our first two classes.
 
  **2)** (_Difficulty: easy_)
 
