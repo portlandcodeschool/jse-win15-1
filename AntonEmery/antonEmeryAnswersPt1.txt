@@ -9,7 +9,7 @@ b) "1" === 1
 False. === is a strict comparison operator and does not see the two as equal
 
 c) x == 'x'
-will evaluate to true if x is a number, since == is truish.
+will evaluate to true if x is a number, since == is truish. 
 
 d) x == (x+'')
 true if x is a number. 5+''='5' which is seen as equal to 5. also true if x is a string. 
@@ -21,7 +21,7 @@ f) x = true
 true unless x is 0, NaN, or an empty string
 
 g) var x; x == 'undefined'
-variable x has not been assigned a value, which is why it is undefined 
+x has been declared but not assigned a value, so it is undefined. but it is not equivalent to the string 'undefined'  this would be true if typeof x == 'undefined'
 
 h) '9'<'10'
 false. both are strings, so the first character of each is evaluated. 9 > 1
