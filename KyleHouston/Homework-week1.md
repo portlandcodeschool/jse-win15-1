@@ -147,9 +147,9 @@ Write an expression which is true if the rectangle is taller than it is wide, an
 	height = (t - b);
 
 	if (width < height) {
-		true
+		true;
 	} else {
-		false
+		false;
 	}
 ```
 
@@ -226,7 +226,7 @@ Imagine that the squares of an ordinary checkerboard are numbered in two differe
 **a)**  Given a particular R and C, find the corresponding N.  That is, write an expression for variable N containing variables R and C.
 
 ```javascript
-	N = (C * 8) + R;
+	N = (R * 8) + C;
 ```
 
 **b)**  Given N, find R.  Write an expression for R which contains N.
@@ -246,17 +246,17 @@ Write an expression to set a variable _color_ to either 'black' or 'white', desc
 (_Hint: If you prefer, you may use a pair of conditional statements instead of a single expression._)
 
 ```javascript
-	if ((R % 2) = 0 ) {
-		if ((N % 2) = 0){
-			color = black;
+	if ((R % 2) == 0 ) {
+		if ((N % 2) == 0){
+			color = "black";
 		} else {
-			color = white;
+			color = "white";
 		}
 	} else {
 		if ((N % 2) != 0) {
-			color = black;
+			color = "black";
 		} else {
-			color = white;
+			color = "white";
 		}
 	}
 ```
