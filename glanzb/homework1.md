@@ -63,19 +63,16 @@ Assume variables x, y, and z are numbers.
 **a)**
 Write an expression for the mean (i.e. average) of x, y, and z.
 
-var mean = (x+y+z)/3
+	var mean = (x+y+z)/3
 
 **b)**
 Write a series of expressions to adjust each of x, y, and z halfway toward their mean.
 That is, reset the value of each variable to something based on its previous value.
 
-var mean = (x+y+z)/3
-
-x = x + (mean/2 - x)
-
-y = y + (mean/2 - y)
-
-z = z + (mean/2 -z)
+	var mean = (x+y+z)/3
+	x = x + (mean/2 - x)
+	y = y + (mean/2 - y)
+	z = z + (mean/2 -z)
 
  
 
@@ -93,55 +90,47 @@ Suppose you're encoding geometric shapes in a Cartesian (2D) coordinate system, 
 **a)**
 Write an expression for the rectangle's area.
 
-var area = (r-l) * (b-t)
+	var area = (r-l) * (b-t)
 
 **b)**
 Write an expression which is true if the rectangle is taller than it is wide, and false otherwise.
 
-(r-l) < (b-t) = true
+	(r-l) < (b-t) = true
+	(r-l) > (b-t) = false
 
-(r-l) > (b-t) = false
-
+	
+	(r-l) < (b-t) ? console.log('true') : console.log('false');
 
 **c)**
 Write an expression for the circumference of the biggest circle which can fit inside the rectangle.  (Hint: you'll need logic similar to that in **b**.)
 
-if ((r-l) < (b-t)){
-
-circumference = (r-l)/2*2*3.14
-
-} else {
-
-circumference = (b-t)/2*2*3.14
-)
+	if ((r-l) < (b-t)){
+	circumference = (r-l)/2*2*3.14
+	} else {
+	circumference = (b-t)/2*2*3.14
+	}
 
 **d)**
 Write an expression for the area of the smallest circle which completely encloses (i.e. circumscribes) the rectangle.
 
-if ((r-l) < (b-t)){
-
-circle = ((b-t)*(b-t) - (r-l)*(r-l))*3.14
-
-} else {
-
-circle = ((r-l)*(r-l) - (b-t)*(b-t))*3.14
-}
+	if ((r-l) < (b-t)){
+	circle = ((b-t)*(b-t) - (r-l)*(r-l))*3.14
+	} else {
+	circle = ((r-l)*(r-l) - (b-t)*(b-t))*3.14
+	}
 
 or 
-(r-l) < (b-t)*(b-t) - ((r-l)*(r-l))*3.14 : ((r-l)*(r-l) - (b-t)*(b-t))*3.14; 
+	(r-l) < (b-t) ? (b-t)*(b-t) - ((r-l)*(r-l))*3.14 : ((r-l)*(r-l) - (b-t)*(b-t))*3.14; 
 
 **e)**
 Imagine subdividing your rectangle into 3 equal rows and 3 equal columns, which would create 9 smaller rectangles, identical in shape but varying by position.
 Define four new variables describing the centermost small rectangle.
 (_Hint: one of the many solutions is very similar to the solution of **2b** above._)
 
-lSmall = l + (r-l)/3
-
-rSmall = r - (r-l)/3
-
-tSmall = t + (b-t)/3
-
-bSmall = b - (b-t)/3
+	lSmall = l + (r-l)/3
+	rSmall = r - (r-l)/3
+	tSmall = t + (b-t)/3
+	bSmall = b - (b-t)/3
 
 ---
 
@@ -155,31 +144,28 @@ Imagine that the squares of an ordinary checkerboard are numbered in two differe
 
 **a)**  Given a particular R and C, find the corresponding N.  That is, write an expression for variable N containing variables R and C.
 
-N = (R*8) + C
+	N = (R*8) + C
 
 **b)**  Given N, find R.  Write an expression for R which contains N.
 
-R = Math.floor(N/8) (the integers of the division)
+	R = Math.floor(N/8) (the integers of the division)
 
 **c)**  Given N, find C.  Write an expression for C which contains N.
 
- C = N % 8
+ 	C = N % 8
 
 **d)**  Assume the squares are colored black and white, with the upper-left square black.
 Write an expression to set a variable _color_ to either 'black' or 'white', describing the square identified by variables R,C, and N.
 (_Hint: If you prefer, you may use a pair of conditional statements instead of a single expression._)
 
-if (N % 2 = 0) {
-
-var color =  black
-
-} else {
-
+	if (N % 2 = 0) {
+	var color =  black
+	} else {
 	var color = white}
 
 or
 
-N % 2 == 0 ? color='black' : color='white'; 
+	N % 2 == 0 ? color='black' : color='white'; 
 
 ---
 
@@ -191,8 +177,7 @@ If _n_ is greater than _d_, the fraction is "improper", but it can be rewritten 
 Write an expression for a string expressing the proper form of an improper fraction _n/d_.  For example, when _n==7_ and _d==4_, your resulting string should be "1 3/4".  You may assume both _n_ and _d_ are positive integers and _n_ > _d_, but otherwise you should be able to handle any values of _n_ and _d_.
 (_Hint: you'll need the modulo operator _%_, and you'll probably want to create a couple of extra variables._)
 
-var calc = n / d
-var integer = Math.floor(n/d)
-var fract = (%(n/d))/d
-
-var calc = integer + fract
+	var calc = n / d
+	var integer = Math.floor(n/d)
+	var fract = (%(n/d))/d
+	var calc = integer + fract
