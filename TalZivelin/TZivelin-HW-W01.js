@@ -102,7 +102,14 @@ b) Given N, find R. Write an expression for R which contains N.
 c) Given N, find C. Write an expression for C which contains N.
 	C = N % 8. Since there are 8 columns mod by 8 will tell you which column you're on.
 
-d) Assume the squares are colored black and white, with the upper-left square black. Write an expression to set a variable color to either 'black' or 'white', describing the square identified by variables R,C, and N. (Hint: If you prefer, you may use a pair of conditional statements instead of a single expression.) -  I have no idea.
+d) Assume the squares are colored black and white, with the upper-left square black. Write an expression to set a variable color to either 'black' or 'white', describing the square identified by variables R,C, and N. (Hint: If you prefer, you may use a pair of conditional statements instead of a single expression.) -  
+
+if (N % 2 = 0)	{
+	square = black
+}
+	else {
+	square = white
+}
 
 
 5) (Difficulty: moderate)
