@@ -1,0 +1,85 @@
+1. a) "1" == 1
+	true: == is equal-ish
+
+b) "1" === 1
+	false: "string" vs "number", === is stricter
+
+c) x == 'x'
+	true: x is set to 'x'
+	false: all other instances
+
+d) x == (x+'')
+	true: even if x is initially a "number" because same reason as in b)
+
+e) '' == ' '
+	false: ' ' is not empty
+
+f) x = true
+	true: this is assignment not equality
+
+g) var x; x == 'undefined'
+	true
+
+h) '9'<'10'
+	false: first character, 9 > 1
+
+i) typeof x + 1 === "number"
+	false: (typeof x) + 1 produces string
+
+j) typeof x % 2 === "number"
+	false: always- string mod 2 will produce NaN
+
+k) typeof (x % 2) === "number"
+	true: if x is a number
+	false: if x is not a number
+
+l) x++ == ++x
+	false: always, essentially the same as: x == (x = x + 1)
+
+m) ++x == x++
+	true: if x is a number type, it evaluates ++x first, adding 1,then compares it to the same value, returning true before adding 1
+	false: if x is anything but a number
+	UNLESS x = is NaN or non-numeric string
+
+n) "1"+x == 1+x
+	true: only if x == '1'
+
+o) "0"+1 == 1
+	true: "00001" equal-ish 1
+
+p) (typeof (x+1))===(typeof x)
+	true: x is a string or number type
+	false: x is boolean
+
+q) (x*1 == x) || ((typeof x) != "number")
+	true: x is a number, left side is true. x is anything else, right side is true. 
+
+r) (x=(typeof (x+(typeof x))))==x
+	true because x == x, you assign x before the comparing
+
+
+
+2. a) (x + y + z) / 3
+   b) x = (x + ((x + y + z) / 3)) / 2 
+   	  y = (y + ((x + y + z) / 3)) / 2 
+   	  z = (z + ((x + y + z) / 3)) / 2 
+
+3.          
+  	a) (t - b) * (r - l)
+  	b) (t - b) > (r - l)
+  	c) assuming 3.b) is true: 2 * 3.14 * ((r - l) * 2)
+  	d) (Math.sqrt(((t - b) * (t - b) + (r - l) * (r - l)))) / 2
+  	e) var l2 = l + ((r - l) / 3);
+       var r2 = r - ((r - l) / 3);
+       var t2 = t - ((t - b) / 3);
+       var b2 = b + ((t - b) / 3);
+
+4. a) n = (7 * r) + c
+   b) r = Math.floor(n / 8)
+   c) c = n % 8
+   d) if ((((r % 2) == 0) && ((c % 2) == 0)) || (((r % 2) != 0) && ((c % 2) != 0))) {
+            color = 'white';
+        } else {
+            color = 'black';
+        }
+5. 
