@@ -39,7 +39,7 @@ l) x++ == ++x
 always false. x++ returns x before adding 1. ++x returns x after adding 1. so they would not be equal. 
 
 m) ++x == x++
-always true. both return the value of x after adding 1 to it.
+true if x is a number. ++x adds 1 and returns x. x++ returns x before adding 1. 
 
 n) "1"+x == 1+x
 will evaluate to true if x is a string, as the number 1 will be converted to a string
@@ -53,7 +53,14 @@ true if x is a number or string.
 q) (x*1 == x) || ((typeof x) != "number")
 returns true if x is a number. the left side evaluates to true which is enough. returns true if x is a boolean, as the right side evalautes to true. 
 
-r) (x=(typeof (x+(typeof x))))==x
+(x=(typeof (x+(typeof x))))==x
+true for whatever you set x to. this is because at the end we are setting x = whatever, which affects the other side. 
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,17 @@
+Imagine that the squares of an ordinary checkerboard are numbered in two different ways:
+
+Each square has integer coordinates (R,C) describing its row and column. Both values should be in the range 0..7, so that the upper-left square is at (0,0) and the bottom-right is at (7,7).
+
+Each square has a unique integer number N from 0 to 63. These numbers run sequentially left-to-right one row at a time, top to bottom. Therefore the upper-left square has N==0 and the bottom-right has N==63.
+
+a) Given a particular R and C, find the corresponding N. That is, write an expression for variable N containing variables R and C.
+
+N = (8 x R) + C
+
+b) Given N, find R. Write an expression for R which contains N.
+
+R = math.floor(N / 8)
+
+c) Given N, find C. Write an expression for C which contains N.
+
+d) Assume the squares are colored black and white, with the upper-left square black. Write an expression to set a variable color to either 'black' or 'white', describing the square identified by variables R,C, and N. (Hint: If you prefer, you may use a pair of conditional statements instead of a single expression.)
