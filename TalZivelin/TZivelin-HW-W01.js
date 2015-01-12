@@ -102,7 +102,7 @@ b) Given N, find R. Write an expression for R which contains N.
 c) Given N, find C. Write an expression for C which contains N.
 	C = N % 8. Since there are 8 columns mod by 8 will tell you which column you're on.
 
-d) Assume the squares are colored black and white, with the upper-left square black. Write an expression to set a variable color to either 'black' or 'white', describing the square identified by variables R,C, and N. (Hint: If you prefer, you may use a pair of conditional statements instead of a single expression.) - 
+d) Assume the squares are colored black and white, with the upper-left square black. Write an expression to set a variable color to either 'black' or 'white', describing the square identified by variables R,C, and N. (Hint: If you prefer, you may use a pair of conditional statements instead of a single expression.) -  I have no idea.
 
 
 5) (Difficulty: moderate)
@@ -110,3 +110,9 @@ d) Assume the squares are colored black and white, with the upper-left square bl
 Suppose you represent a fraction (n/d) with 2 integer variables: n for the numerator and d for the denominator. If n is greater than d, the fraction is "improper", but it can be rewritten as a proper fraction. For example, "7/4" is improper, but it can be rewritten as "1 3/4", which is proper.
 
 Write an expression for a string expressing the proper form of an improper fraction n/d. For example, when n==7 and d==4, your resulting string should be "1 3/4". You may assume both n and d are positive integers and n > d, but otherwise you should be able to handle any values of n and d. (Hint: you'll need the modulo operator _%, and you'll probably want to create a couple of extra variables._)
+
+n = 7;
+d =4;
+x = n % d;
+_ + "" + x + "/" d
+
