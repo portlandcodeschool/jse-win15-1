@@ -82,4 +82,5 @@ r) (x=(typeof (x+(typeof x))))==x
         } else {
             color = 'black';
         }
-5. 
+
+5.  Math.floor(n/d) + ' ' + (n % d) + '/' + d
