@@ -122,13 +122,13 @@ var area = width * height;
 // **c)**
 // Write an expression for the circumference of the biggest circle which can fit inside the rectangle.  (Hint: you'll need logic similar to that in **b**.)
 // circumference is 2*PI*R
-var maxCircumference = 2 * Math.PI ((height < width ? height : width )/2) // max circumference is based on radius inscribed inside whichever is smaller height or width
+var maxCircumference = 2 * Math.PI * ((height < width ? height : width )/2) // max circumference is based on radius inscribed inside whichever is smaller height or width
 
 // **d)**
 // Write an expression for the area of the smallest circle which completely encloses (i.e. circumscribes) the rectangle.
 // area is PI*R^2 distance is sqrt( (x2-x1)^2 + (y2-y1)^2 )
-var minRadius = Math.sqrt( Math.square(x2-x1) + Math.square(y2-y1) ) / 2; // half the diagonal is the minimal radius of the circumscribing circle
-var minArea   = Math.PI * Math.square(minRadius); 
+var minRadius = Math.sqrt( Math.pow((x2-x1),2) + Math.pow((y2-y1),2)) / 2; // half the diagonal is the minimal radius of the circumscribing circle
+var minArea   = Math.PI * Math.pow((minRadius),2); 
 
 
 // **e)**
@@ -176,9 +176,20 @@ var col = n % 8;
 // (_Hint: If you prefer, you may use a pair of conditional statements instead of a single expression._)
 
 //  squareColor = black if (even row AND even column) OR (odd row AND odd column)
-var squareColor = (((Math.trunc( n / 8 ) % 2) === 0) && (( n % 8 ) % 2 === 0) 
-			   ||  ((Math.trunc( n / 8 ) % 1) === 0) && (( n % 8 ) % 1 === 0) ) ? "black" : "white");
 
+
+	if      (((Math.trunc( n / 8 ) % 2) == 0) && (( n % 8 ) % 2) == 0) // row and col are both even
+	{ 
+		squareColor = "black"
+	} 
+	else if (((Math.trunc( n / 8 ) % 2) != 0) && (( n % 8 ) % 2) != 0) // row and col are both odd
+	{
+		squareColor = "black"
+	} 
+	else
+	{
+		squareColor = "white"
+	};
 
 // ---
 
@@ -197,15 +208,6 @@ wholeNumber = Math.trunc( n / d );
 numerator = n % d;
 
 properFraction = wholeNumber + " " + numerator + "/" + d;
-
-
-
-
-
-
-
-
-
 
 
 // Write an expression for a string expressing the proper form of an improper fraction _n/d_.  For example, when _n==7_ and _d==4_, your resulting string should be "1 3/4".  You may assume both _n_ and _d_ are positive integers and _n_ > _d_, but otherwise you should be able to handle any values of _n_ and _d_.
