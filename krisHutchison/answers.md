@@ -58,15 +58,20 @@ Some of these are tricky!  Don't trust your first instinct.
 **A:** Error - expression terminates at "1"+x because x is undefined.
 
 **o)** `"0"+1 == 1`
+
 **A:** True - "0"+1 evaluates to string "01" which is converted to a number when compared to number 1. The leading 0 on the string "01" is dropped.
 
 **p)** `(typeof (x+1))===(typeof x)`	
+
 **A:** Error - (x+1) is evaluated first but x is undefined so the operation terminates.
 
 **q)** `(x*1 == x) || ((typeof x) != "number")`
+
 **A:** Error - the expression is evaluated from within the inner parens. Typeof x is undefined which returns true when evaluated against not string 'number' the operation terminates when it gets to the undefined x on the left side of the expression.
 
 **r)** `(x=(typeof (x+(typeof x))))==x`
+
+
 **A:** Error - the inner (typeof x) evaluates to "undefined" which is added to x leaving a string 'xundefined' which is typeof string but the first x terminates because it's undefined.
 
 ---
@@ -79,14 +84,17 @@ Assume variables x, y, and z are numbers.
 
 **a)**
 Write an expression for the mean (i.e. average) of x, y, and z.
-**A:** `(x+y+z)/3`
+**A:** 
+`(x+y+z)/3`
 
 **b)**
 Write a series of expressions to adjust each of x, y, and z halfway toward their mean.
 That is, reset the value of each variable to something based on its previous value.
-**A:** `x = x-(((x-(x+y+z)/3))*0.5)`
-	   `y = ((((x+y+z)/3)-y)*0.5)+y`
-       `z = ((((x+y+z)/3)-z)*0.5)+z`
+**A:** 
+
+	x = x-(((x-(x+y+z)/3))*0.5)
+	y = ((((x+y+z)/3)-y)*0.5)+y
+    z = ((((x+y+z)/3)-z)*0.5)+z
 
 ---
 
@@ -101,28 +109,34 @@ Suppose you're encoding geometric shapes in a Cartesian (2D) coordinate system, 
 
 **a)**
 Write an expression for the rectangle's area.
-**A:** `(r-l) * (t-b)`
+**A:** 
+`(r-l) * (t-b)`
 
 **b)**
 Write an expression which is true if the rectangle is taller than it is wide, and false otherwise.
-**A:** `(t-b) > (r-l)`
+**A:** 
+`(t-b) > (r-l)`
 
 **c)**
 Write an expression for the circumference of the biggest circle which can fit inside the rectangle.  (Hint: you'll need logic similar to that in **b**.)
-**A:** `(t-b) > (r-l) ? (r-l) * 3.14 : (t-b) * 3.14`
+**A:** 
+`(t-b) > (r-l) ? (r-l) * 3.14 : (t-b) * 3.14`
 
 **d)**
 Write an expression for the area of the smallest circle which completely encloses (i.e. circumscribes) the rectangle.
-**A:** `(Math.sqrt((Math.pow((t-b), 2) + Math.pow((r-l), 2))) *3.14);`
+**A:** 
+`(Math.sqrt((Math.pow((t-b), 2) + Math.pow((r-l), 2))) *3.14);`
 
 **e)**
 Imagine subdividing your rectangle into 3 equal rows and 3 equal columns, which would create 9 smaller rectangles, identical in shape but varying by position.
 Define four new variables describing the centermost small rectangle.
 (_Hint: one of the many solutions is very similar to the solution of **2b** above._)
-**A:** `leftHorizontal = ((r-l) / 3 ) - l`  
-	   `rightHorizontal = ((r-l) /3 ) - r`
-	   `bottomVertical = ((t-b) / 3 ) -b`
-	   `topVertical = ((t-b) / 3 ) -t `
+**A:** 
+
+	leftHorizontal = ((r-l) / 3 ) - l  
+	rightHorizontal = ((r-l) /3 ) - r
+	bottomVertical = ((t-b) / 3 ) -b
+	topVertical = ((t-b) / 3 ) -t 
 
 ---
 
@@ -135,18 +149,22 @@ Imagine that the squares of an ordinary checkerboard are numbered in two differe
 * Each square has a unique integer number N from 0 to 63.  These numbers run sequentially left-to-right one row at a time, top to bottom.  Therefore the upper-left square has N==0 and the bottom-right has N==63.
 
 **a)**  Given a particular R and C, find the corresponding N.  That is, write an expression for variable N containing variables R and C.
-**A:** `N = (R * 8) + C`
+**A:** 
+`N = (R * 8) + C`
 
 **b)**  Given N, find R.  Write an expression for R which contains N.
-**A:** `R = N / 8`
+**A:** 
+`R = N / 8`
 
 **c)**  Given N, find C.  Write an expression for C which contains N.
-**A:** `C = N % 8`
+**A:** 
+`C = N % 8`
 
 **d)**  Assume the squares are colored black and white, with the upper-left square black.
 Write an expression to set a variable _color_ to either 'black' or 'white', describing the square identified by variables R,C, and N.
 (_Hint: If you prefer, you may use a pair of conditional statements instead of a single expression._)
-**A:** `((n % 2 == 0) && (r % 2 == 0)) ? n="black" : n="white"`
+**A:** 
+`((n % 2 == 0) && (r % 2 == 0)) ? n="black" : n="white"`
 
 ---
 
@@ -159,9 +177,9 @@ Write an expression for a string expressing the proper form of an improper fract
 (_Hint: you'll need the modulo operator _%_, and you'll probably want to create a couple of extra variables._)
 **A:** 
 
-```javascript 
-whole = Math.floor(n/d); 
-rem = Math.round( n % d ); 
-n > d ? whole + " " + rem + "/" + d : n+"/"+d
-```
+	whole = Math.floor(n/d); 
+	rem = Math.round( n % d ); 
+	
+	n > d ? whole + " " + rem + "/" + d : n+"/"+d
+
 
