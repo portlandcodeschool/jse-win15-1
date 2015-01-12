@@ -14,4 +14,7 @@ R = math.floor(N / 8)
 
 c) Given N, find C. Write an expression for C which contains N.
 
+N % 8 = C
+
 d) Assume the squares are colored black and white, with the upper-left square black. Write an expression to set a variable color to either 'black' or 'white', describing the square identified by variables R,C, and N. (Hint: If you prefer, you may use a pair of conditional statements instead of a single expression.)
+
