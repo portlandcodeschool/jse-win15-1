@@ -148,12 +148,28 @@ var c = n % 8; //finds the specific colunm
 var n = ((r * width) + c); //finds the specific square
 
 //d)
-var b = "1"; 
-var w = "0";
+//N is the specific square
+//C is the column 
+//R is the row 
 
+// N = (R x Width) + c
+// C = N % total number of colunms 
+// R = math.floor
+i = (r % 2 == 0 && n % 2 ==0) || (r % 1 != 0 && n % 2 != 0);
+
+// or
+
+i = ((r + n) % == 0) || ((r + n) != 0);
+
+//or 
+
+i = ((r + n) % == 0;
 //equation for rows 
 
 
+
+var b = "1"; 
+var w = "0";
 
 var row_output = "";
 
