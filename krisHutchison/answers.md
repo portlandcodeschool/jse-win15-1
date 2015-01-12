@@ -67,6 +67,7 @@ Some of these are tricky!  Don't trust your first instinct.
 
 **q)** `(x*1 == x) || ((typeof x) != "number")`
 
+
 **A:** Error - the expression is evaluated from within the inner parens. Typeof x is undefined which returns true when evaluated against not string 'number' the operation terminates when it gets to the undefined x on the left side of the expression.
 
 **r)** `(x=(typeof (x+(typeof x))))==x`
