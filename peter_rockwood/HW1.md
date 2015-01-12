@@ -18,7 +18,7 @@ Some of these are tricky!  Don't trust your first instinct.
 
 **a)** `"1" == 1`
 
-	True, loosey equality.     					
+	True, type-converting equality.     					
 
 **b)** `"1" === 1`
 
@@ -26,7 +26,7 @@ Some of these are tricky!  Don't trust your first instinct.
 
 **c)** `x == 'x'`  
 
-	True if the value of x is 'x'   					
+	True if the value of x is 'x', otherwise false.   					
 
 **d)** `x == (x+'')`  
 
@@ -42,11 +42,12 @@ Some of these are tricky!  Don't trust your first instinct.
 
 **g)** `var x; x == 'undefined'`
 
-	True, an initialized, but unassigned variable returns 'undefined'.		
+	False, an initialized, but unassigned variable has the value and returns 'undefined',
+	but does not have the value of the string 'undefined'		
 
 **h)** `'9'<'10'`	
 
-	False, no loosey conversion tricks for inequalities.					
+	False, no type-conversion for inequalities.					
 
 **i)** `typeof x + 1 === "number"`	
 
@@ -54,7 +55,7 @@ Some of these are tricky!  Don't trust your first instinct.
 
 **j)** `typeof x % 2 === "number"`	
 
-	False, typeof x gets evaluated first returning a string applying modulus.	
+	False, typeof x gets evaluated first returning a string and then applying modulus.	
 
 **k)** `typeof (x % 2) === "number"`	
 
@@ -63,29 +64,28 @@ Some of these are tricky!  Don't trust your first instinct.
 **l)** `x++ == ++x`	
 
 	False, x++ returns x previous to the add, ++x returns x after the add.
-	In fact the tested values would differ by 2.
 
 **m)** `++x == x++`	
 
-	True, ++x returns x+1 and that would be assigned to x. x++ would return the 										same, new value of x. 
+	True, ++x returns x+1 and assigns it to x. x++ returns the 							same, new value of x. 
 
 **n)** `"1"+x == 1+x`	
 
-	False, "1"+x concatonates 1 onto the front of number value x, which will always 									increase the order of x by 1 and never be equal to x+1.				
+	False, "1"+x prepends '1' onto number value x, which will increase the order of x by 1 and never be equal to x+1.				
 
 **o)** `"0"+1 == 1`							
 
-	True, appending a zero onto 1 still evaluates to 1.
+	True, prepending a zero onto 1 still evaluates to 1.
 
 **p)** `(typeof (x+1))===(typeof x)`		
 
-	True, given x is assigned to a number.
+	True, if x is a number. Also true if x is a string, (x+1) will convert x to a string before the expression on the right is evaluated.
 
 **q)** `(x*1 == x) || ((typeof x) != "number")`	
 
 	False, if x is a number, the first condition is true, but the 
 	second condition is false. If x is not a number the same holds 
-	true vica-versus.
+	true vice-versa.
 
 **r)** `(x=(typeof (x+(typeof x))))==x`		
 
