@@ -84,3 +84,112 @@ for (var x = 0, length = testCases.length; x < length; x++) {
 	var result = (testCases[x] = (typeof (testCases[x] + (typeof testCases[x])))) == testCases[x];
 	console.log(testCases[x] + " is " + result)
 };
+
+
+/* SECTION 2*/
+
+//a) Write an expression for the mean (i.e. average) of x, y, and z.
+(x + y + z) / 3;
+
+
+//b) Write a series of expressions to adjust each of x, y, and z halfway toward their mean. That is, reset the value of each variable to something based on its previous value.
+
+var x = 200, y = 500, z = 300;
+var mean = (x + y + z) / 3;
+
+x < average ? (x += (average - x) / 2) : (x -= (x - average) / 2);
+y < average ? (y += (average - y) / 2) : (y -= (y - average) / 2);
+z < average ? (z += (average - z) / 2) : (z -= (z - average) / 2);
+
+
+/* SECTION 3*/
+
+//a) Write an expression for the rectangle's area.
+var width = r - l, height = t - b;
+var area = width * height;
+
+//b) Write an expression which is true if the rectangle is taller than it is wide, and false otherwise.
+
+height > width > ? true : false
+
+//c
+var circumference = Math.pi * height;
+
+
+//d
+var area = /* R squared = (w/2 + h/2*)squared  */
+
+// 
+
+/* SECTION 4 */
+
+//a) Given a particular R and C, find the corresponding N. That is, write an expression for variable N containing variables R and C.
+//create an array to represent squares in checkboard
+var grid = [];
+for (var i = 0; i <= 63; i++) {
+    grid.push(i);
+}
+
+var r = 1, c = 5;
+
+
+var column = n % 8 /* 8 is width*/
+
+n = (r * width) + c;
+
+r = Math.floor(n / width)
+
+
+/* does this relate to none-visual areas, for example relational data*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//d
+var color = "";
+for (var i = 0, length = grid.length; i++){
+	if (i % 2 == 0)
+		color = black;
+	else
+		color = white;
+}
+
+
+
+
+
+
+
+
