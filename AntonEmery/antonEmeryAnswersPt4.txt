@@ -18,9 +18,11 @@ N % 8 = C
 
 d) Assume the squares are colored black and white, with the upper-left square black. Write an expression to set a variable color to either 'black' or 'white', describing the square identified by variables R,C, and N. (Hint: If you prefer, you may use a pair of conditional statements instead of a single expression.)
 
-if (((8 x R) + C) % 2 == 0) {
-	//square color is black
+
+
+if ((R % 2 == 0) && (C % 2 == 0)) || ((R % 2 != 0) && (C % 2 != 0)) {
+	//square is white
 } else {
-	// square is white
+	//square is black 
 }
 
