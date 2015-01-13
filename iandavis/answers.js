@@ -111,20 +111,32 @@ var area = width * height;
 //b) Write an expression which is true if the rectangle is taller than it is wide, and false otherwise.
 
 height > width > ? true : false
+(height > width)|| false
 
-//c
-var circumference = Math.pi * height;
+//c) Write an expression for the circumference of the biggest circle which can fit inside the rectangle. (Hint: you'll need logic similar to that in b.)
+var circumference = Math.PI * height;
 
 
-//d
-var area = /* R squared = (w/2 + h/2*)squared  */
+//d) Write an expression for the area of the smallest circle which completely encloses (i.e. circumscribes) the rectangle.
+var radius = (width/2 + height/2)
+var area = Math.PI * Math.pow(radius, 2)
+ 
+//e) Imagine subdividing your rectangle into 3 equal rows and 3 equal columns, which would create 9 smaller rectangles, identical in shape but varying by position. Define four new variables describing the centermost small rectangle. (Hint: one of the many solutions is very similar to the solution of 2b above.)
 
-// 
+var outerWidth = r - l, outerHeight = t - b;
+var innerWidth = outerWidth / 3;
+var innerHeight = outerHeight / 3; 
+var innerL, innerR, innerT, innerB;
+
+innerL = l + innerWidth;
+innerR = r - innerWidth;
+innerT = t + innerHeight;
+innerB = b - innerHeight;
 
 /* SECTION 4 */
 
 //a) Given a particular R and C, find the corresponding N. That is, write an expression for variable N containing variables R and C.
-//create an array to represent squares in checkboard
+//creates an array to represent squares in checkboard
 var grid = [];
 for (var i = 0; i <= 63; i++) {
     grid.push(i);
@@ -132,24 +144,14 @@ for (var i = 0; i <= 63; i++) {
 
 var r = 1, c = 5;
 
-
 var column = n % 8 /* 8 is width*/
-
+//a) Given a particular R and C, find the corresponding N. That is, write an expression for variable N containing variables R and C.
 n = (r * width) + c;
 
+//b) Given N, find R. Write an expression for R which contains N.
 r = Math.floor(n / width)
 
-
-/* does this relate to none-visual areas, for example relational data*/
-
-
-
-
-
-
-
-
-
+//c) Given N, find C. Write an expression for C which contains N.
 
 
 
