@@ -2,4 +2,4 @@ Suppose you represent a fraction (n/d) with 2 integer variables: n for the numer
 
 Write an expression for a string expressing the proper form of an improper fraction n/d. For example, when n==7 and d==4, your resulting string should be "1 3/4". You may assume both n and d are positive integers and n > d, but otherwise you should be able to handle any values of n and d. (Hint: you'll need the modulo operator _%, and you'll probably want to create a couple of extra variables._)
 
-n/d
+Math.floor(7/4) + " " + (7 % 4) + '/' + 4
