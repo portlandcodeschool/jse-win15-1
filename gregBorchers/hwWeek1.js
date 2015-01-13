@@ -128,7 +128,7 @@ var maxCircumference = 2 * Math.PI * ((height < width ? height : width )/2) // m
 // Write an expression for the area of the smallest circle which completely encloses (i.e. circumscribes) the rectangle.
 // area is PI*R^2 distance is sqrt( (x2-x1)^2 + (y2-y1)^2 )
 //var minRadius = Math.sqrt( Math.pow((x2-x1),2) + Math.pow((y2-y1),2)) / 2; // half the diagonal is the minimal radius of the circumscribing circle
-var minRadius = ((x2-x1) < y2-y1) ? x2-x1 : y2-y1 );
+var minRadius = (((x2-x1) < y2-y1) ? x2-x1 : y2-y1 );
 var minArea   = Math.PI * Math.pow((minRadius),2); 
 
 
