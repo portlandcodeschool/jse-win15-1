@@ -18,36 +18,52 @@ Some of these are tricky!  Don't trust your first instinct.
 
 **a)** `"1" == 1`
 >True. The value of the string and the value of the number are equivalent. 
+
 **b)** `"1" === 1`
 >False. The values are the same but they are not the same AND of the same type. 
+
 **c)** `x == 'x'`
 >False. The first is a variable and the second is a string of 'x'. The variable could hold any value. This would be true if the value of x was "x"
+
 **d)** `x == (x+'')`
 >True. Adding an empty string concatenates nothing to the variable. This leaves it unchanged. 
+
 **e)** `'' == ' '`
 >False. The first value is empty but the second contains a space. 
+
 **f)** `x = true`
 >True. We are assigning a boolean true. So it returns the truth. 
+
 **g)** `var x; x == 'undefined'`
 >False. 'var x' does not assign a value, so x retains whatever unknown value it previously had. "x == 'undefined'" is a string. So this will only be true if x = 'undefined' (not the same as x = undefined).
+
 **h)** `'9'<'10'`
 >False. Because these are strings it evaluates the first character and then quits. Since 9 > 1 it decides that the boolean is false.
+
 **i)** `typeof x + 1 === "number"`
 >False. Without parentheses this will return number1 and interpret these as two separate elements. The parentheses are required for the console to interpret them as a unit. 
+
 **j)** `typeof x % 2 === "number"`
 >False. For the same reason as above.
+
 **k)** `typeof (x % 2) === "number"`
 >True. The parentheses allow the equation to be performed before the typeof registers. (Question about why it isn't true with just number without quotes)
+
 **l)** `x++ == ++x`
 >False. In the first instance the value of X is determined before the addition but in the second instance X is evaluated after. 
+
 **m)** `++x == x++`
 >True. If X is a number value the addition takes place after the comparison. If the value of x is not a number this will be false.
+
 **n)** `"1"+x == 1+x`
 >False. If X is a number it will concatenate the first pair and add the second. If X is a string it will contcatenate both sides and be true.
+
 **o)** `"0"+1 == 1`
 >True. "0" is interpreted as a number, and 1+0=1
+
 **p)** `(typeof (x+1))===(typeof x)`	
 >If X is a number, string or NaN it evaluates to true. False if X is a boolean, undefined, or null. The console registers (x+1) as a number. 
+
 **q)** `(x*1 == x) || ((typeof x) != "number")`
 >True unless X is NaN. If X is NaN both sides are false, but for all other value types at least one side of the statement will be true.
 **r)** `(x=(typeof (x+(typeof x))))==x`
@@ -63,6 +79,7 @@ Assume variables x, y, and z are numbers.
 **a)**
 Write an expression for the mean (i.e. average) of x, y, and z.
 >(x + y + z) / 3
+
 **b)**
 Write a series of expressions to adjust each of x, y, and z halfway toward their mean.
 That is, reset the value of each variable to something based on its previous value.
@@ -87,9 +104,11 @@ Write an expression for the rectangle's area.
 >(Not sure that I understood the placement of the variables) 
 var
 var area = (t - b) * (r - l)
+
 **b)**
 Write an expression which is true if the rectangle is taller than it is wide, and false otherwise.
 >(t - b) > (r - l)
+
 **c)**
 Write an expression for the circumference of the biggest circle which can fit inside the rectangle.  (Hint: you'll need logic similar to that in **b**.)
 >if ((t - b) > (r - l)); {
@@ -97,6 +116,7 @@ Write an expression for the circumference of the biggest circle which can fit in
 	} else {
 		var maxCircumference = 3.14 * ((t - b)/2);
 	}
+
 **d)**
 Write an expression for the area of the smallest circle which completely encloses (i.e. circumscribes) the rectangle.
 
