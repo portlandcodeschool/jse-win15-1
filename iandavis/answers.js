@@ -188,7 +188,16 @@ for (var i = 0, length = grid.length; i++){
 		color = white;
 }
 
-
+//e
+//input improper fraction (7/4) output string proper fraction (1 3/4)
+var n = 7, d = 4;
+var wholeNumber = Math.floor(n / d);
+if (n % d == 0) {
+	var fractionString = "";
+} else {
+	fractionString = (n % d) + "/" + d;
+}
+console.log(wholeNumber + " " + fractionString)
 
 
 
