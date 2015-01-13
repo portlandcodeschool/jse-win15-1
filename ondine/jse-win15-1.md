@@ -101,16 +101,19 @@ Assume variables x, y, and z are numbers.
 **a)**
 Write an expression for the mean (i.e. average) of x, y, and z.
 
-(x + y + z)/3
+`(x + y + z)/3`
 
 **b)**
 Write a series of expressions to adjust each of x, y, and z halfway toward their mean.
 That is, reset the value of each variable to something based on its previous value.
 
-```var mean = (x + y + z)/3;
-x = (mean-x)/2 + x;
-y = (mean-y)/2 + y;
-z = (mean-z)/2 + z;```
+`var mean = (x + y + z)/3;`
+
+`x = (mean-x)/2 + x;`
+
+`y = (mean-y)/2 + y;`
+
+`z = (mean-z)/2 + z;`
 
 ---
 
@@ -126,18 +129,27 @@ Suppose you're encoding geometric shapes in a Cartesian (2D) coordinate system, 
 **a)**
 Write an expression for the rectangle's area.
 
-`var areaRect = (r - l) * (t + b)`
+`var areaRect = (r - l) * (t - b)`
 
 **b)**
 Write an expression which is true if the rectangle is taller than it is wide, and false otherwise.
 
-```if (t + b) > (r - l);
-  areaRect == true```
+`((t - b) > (r - l))`
 
 **c)**
 Write an expression for the circumference of the biggest circle which can fit inside the rectangle.  (Hint: you'll need logic similar to that in **b**.)
 
-`var circleCircumference = Math.PI * (r - l)`
+`if ((r - l) > (t - b)) { `
+
+`  var diameter = (t - b); `
+
+`  } else { `
+
+`  diameter = (r - l)`
+  
+`}`
+
+`circleCircumference = Math.PI * diameter;`
 
 **d)**
 Write an expression for the area of the smallest circle which completely encloses (i.e. circumscribes) the rectangle.
@@ -149,10 +161,13 @@ Imagine subdividing your rectangle into 3 equal rows and 3 equal columns, which 
 Define four new variables describing the centermost small rectangle.
 (_Hint: one of the many solutions is very similar to the solution of **2b** above._)
 
-```var l1 = l + ((r - l)/3);
-var r1 = r - ((r - l)/3);
-var t1 = t + ((b - t)/3);
-var b1 = b - ((b - t)/3);```
+`var l1 = l + ((r - l)/3);`
+
+`var r1 = r - ((r - l)/3);`
+
+`var t1 = t - ((t - b)/3);`
+
+`var b1 = b + ((t - b)/3);`
 
 ---
 
@@ -162,19 +177,35 @@ Imagine that the squares of an ordinary checkerboard are numbered in two differe
 
 * Each square has integer coordinates _(R,C)_ describing its row and column.  Both values should be in the range 0..7, so that the upper-left square is at (0,0) and the bottom-right is at (7,7).
 
-
-
 * Each square has a unique integer number N from 0 to 63.  These numbers run sequentially left-to-right one row at a time, top to bottom.  Therefore the upper-left square has N==0 and the bottom-right has N==63.
 
 **a)**  Given a particular R and C, find the corresponding N.  That is, write an expression for variable N containing variables R and C.
 
+`var width = 8;`
+
+`nNum = rRow * width + cCol`
+
 **b)**  Given N, find R.  Write an expression for R which contains N.
 
+`rRow = Math.floor(nNum / width)`
+
 **c)**  Given N, find C.  Write an expression for C which contains N.
+
+`cCol = nNum % width`
 
 **d)**  Assume the squares are colored black and white, with the upper-left square black.
 Write an expression to set a variable _color_ to either 'black' or 'white', describing the square identified by variables R,C, and N.
 (_Hint: If you prefer, you may use a pair of conditional statements instead of a single expression._)
+
+`if (rRow % 2 === 0 && cCol % 2 === 0) || (rRow % 2 !=== 0 && cCol % 2 !=== 0) {`
+  
+`  color = 'black';`
+
+`} else {`
+  
+`  color = 'white';`
+
+`}`
 
 ---
 
@@ -185,3 +216,11 @@ If _n_ is greater than _d_, the fraction is "improper", but it can be rewritten 
 
 Write an expression for a string expressing the proper form of an improper fraction _n/d_.  For example, when _n==7_ and _d==4_, your resulting string should be "1 3/4".  You may assume both _n_ and _d_ are positive integers and _n_ > _d_, but otherwise you should be able to handle any values of _n_ and _d_.
 (_Hint: you'll need the modulo operator _%_, and you'll probably want to create a couple of extra variables._)
+
+`var numeratorTwo = n % d;`
+
+`var number = Math.floor(n / d);`
+
+`return "number " + "numeratorTwo\/d";`
+
+
