@@ -221,6 +221,6 @@ Write an expression for a string expressing the proper form of an improper fract
 
 `var number = Math.floor(n / d);`
 
-`return "number " + "numeratorTwo\/d";`
+`var result = number + " " + numeratorTwo + "/" + d;`
 
 
