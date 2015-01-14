@@ -6,8 +6,10 @@
 //b)
 "1" === 1 /*Output: Always False The operand "===" represents Equal Value and Equal Type. Unlike, "1"==1, where there is a type conversion, this operand is checking for equality. This operand is more precise than the equal to operand and therefor the better choice when checking for a more precise equality.*/
 
-//c)
+//c) --- Incorrect 
 x == 'x' /*Output:true when x equals a number or a string Javascript will convert 'x' to a number; however, if x equals an object or undefined then the output is false*/
+
+//correct answer - false UNLESS x is literally string 'x'
 
 //d)
 x == (x+'')
@@ -60,8 +62,14 @@ var x = 1;
 2==2
 true
 
-//n) 
+//n) ---- incorrect 
 "1"+x == 1+x /*Output: false because if x=1, "1"+x will evaluate to 11 and 1 + 1 will evaluate to 2. Therefore, x=1; "1"+1 == 1+x; 11 == 2; false*/
+
+/*correct answer - true when x is any string:
+ '1'+x == 1+x
+    '1'+'****' == 1+x
+    '1****' == 1+x
+    '1****' == '1****' */
 
 //o) 
 "0"+1 == 1 /*Output: true because "0"+1 will evaluate to 1, and 1 == 1 is true*/
@@ -70,14 +78,23 @@ true
 (typeof (x+1))===(typeof x) /*Output: true with the exception of when x is equal to null, undefined, or boolean */
 
 //q) 
-(x*1 == x) || ((typeof x) != "number") /*Output: true because when x equals 1 this evaluates to (1*1 == 1) true || ((typeof 1) != "number") false. The|| denotes logical or. It produces true if either of the values given to it is true.*/
+(x*1 == x) || ((typeof x) != "number") /*Output: true because when x equals 1 this evaluates to (1*1 == 1) true || ((typeof 1) != "number") false. The|| denotes logical or. It produces true if either of the values given to it is true.*/ 
 
-//r) -------------?
+/* side note true unless x is Nan*/
+
+//r) ------------- not correct! 
 (x=(typeof (x+(typeof x))))==x /*Output: Always true*/
 x=1;
 (1=(typeof (1+(typeof 1))))==1
 (1=(typeof (1+("number"))))==1
 (1=("number"))==1
+
+/* Correct answer 
+ true.  For any x, this becomes:
+    (x=(typeof (x+'*****')))==x
+    (x=(typeof 'x*****'))==x
+    (x='string') == x
+    'string' == 'string' */
 
 //Excercise #2
 
@@ -86,10 +103,24 @@ var y = 2,x = 4,z = 6,total = 3;
 var calc = ((y+x+z)/total);
 console.log(calc);
 
-//b)
+//b)  not correct 
 var y = (calc/2), x = (calc/2), z = (calc/2), total = total;
 var calc = ((y+x+z)/total);
 console.log(calc);
+
+/* Correct answer 
+var mean  = (x+y+z/3);
+x = (x+mean)/2;
+y = (y+mean)/2;
+z = (z+mean)/2;
+
+or 
+
+x+= (mean-x)/2;
+y+= (mean-y)/2;
+z+= (mean-z)/2;
+
+*/
 
 
 //Excercise #3
@@ -112,12 +143,30 @@ if (h>w) {
     console.log("false");
 };
 
-//c) C=2πr calculating the circumference of the circle
+//c) C=2πr calculating the circumference of the circle --- need to study 
 var r = (h/2);
 var c = (2 * Math.PI * r);
 console.log("The circumference of the biggest circle which can fit inside the rectangle " + c);
 
-//d)
+/* Correct answer 
+
+var smallerDiam;
+var isTall = (t-b)>(r-l);
+
+if (isTall) {
+    smallerDiam = r-l;
+} else {
+    smallerDiam = t-b;
+//OR:
+var smallerDiam = isTall? (r-l): (t-b);
+//OR:
+var smallerDiam = (r-l)*isTall + (t-b)*(!isTall);
+
+var circumference = smallerDiam * Math.PI;
+
+*/
+
+//d) --- need to study 
 //calculating the diagnol line of the rectangle
 var line =Math.sqrt((Math.pow(w,2))+(Math.pow(h,2)));
 console.log("The length of the diagnol line of the rectangle is " + line);
@@ -128,12 +177,28 @@ console.log("The radious of the smallest circle which completely encloses the re
 var c = (2 * Math.PI * r);
 console.log("The area of the smallest circle which completely encloses the rectangle is " + c);
 
-//e)
+/* 
+var w = r-l,
+    h = t-b,
+    rSquared = h*h + w*w,
+    area = Math.PI * rSquared;
+*/
+
+
+//e) ---- need to study
 //calculating the center most rectangle 
 var t3rd = (20*(1/3));
 var b3rd = (2*(2/3)); 
 var l3rd = (2*(1/3)); 
 var r3rd = (12 * (2/3));
+
+/* Solution using weighted means:
+
+var lc = (2*l + r)/3;
+var rc = (2*r + l)/3;
+var tc = (2*t + b)/3;
+var bc = (2*b + t)/3;
+*/
 
 //Excercise #4
 
@@ -155,34 +220,34 @@ var n = ((r * width) + c); //finds the specific square
 // N = (R x Width) + c
 // C = N % total number of colunms 
 // R = math.floor
-i = (r % 2 == 0 && n % 2 ==0) || (r % 1 != 0 && n % 2 != 0);
+i = (r % 2 == 0 && n % 2 == 0) || (r % 1 != 0 && n % 2 != 0);
 
 // or
 
-i = ((r + n) % == 0) || ((r + n) != 0);
+i = ((r + n) % 2 == 0) || ((r + n) % 2 != 0);
 
 //or 
 
-i = ((r + n) % == 0;
+i = ((r + n) % 2) == 0;
 //equation for rows 
 
+/* Dan's answers 
+var r = 16;
+var c = 6;
+var color = (r%2 == c%2) ? 'black' : 'white';
+//OR
+var color = ((r+c)%2 == 0) ? 'black' : 'white';
+//OR
+var color = ((r+c+1)%2) ? 'black' : 'white';
+//OR
+var color = ((r+n)%2 == 0) ? 'black' : 'white';
+//OR many others...
 
+*/
 
-var b = "1"; 
-var w = "0";
+//Excercise #5
 
-var row_output = "";
-
-for(r = 0; r < 8; r++) { //This creating my row 
-    for (c = 0; c < 6; c++) { //This is creating my column 
-        if (((r % 2 === 0) && (c % 2 === 0)) || ((r % 2 != 0) && (c % 2 != 0))) {//This checks if row is even and column is even and vice versa
-            row_output += "1"; 
-            } else {
-            row_output += "0";
-            }
-    }
-    console.log(row_output);
-};
+(n/d - ((n/d)%1) + x) + " " + ((n%d) + x) + "/" + (d + x);
 
 
 
