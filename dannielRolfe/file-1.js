@@ -246,7 +246,7 @@ var color = ((r+n)%2 == 0) ? 'black' : 'white';
 */
 
 //Excercise #5
-
+var x = '', n = 7, d = 4;
 (n/d - ((n/d)%1) + x) + " " + ((n%d) + x) + "/" + (d + x);
 
 
