@@ -16,40 +16,94 @@ Some of these are tricky!  Don't trust your first instinct.
 
 
 **a)** `"1" == 1`
+<pre>
+True. ==  tries to match types 
+</pre>
 
-**b)** `"1" === 1`
+**b)** `"1" === 1` 
+<pre> 
+False, not an exact match.
+</pre>
 
 **c)** `x == 'x'`
+<pre> 
+True, types converted. 
+</pre>
 
 **d)** `x == (x+'')`
+<pre> 
+True, for numbers, I feel like it should be true in general, buts its not! 
+</pre>
 
 **e)** `'' == ' '`
+<pre> 
+False, that is an empty string and not equal to anything. 
+</pre>
 
 **f)** `x = true`
 
+<pre> 
+that is an assignment operator, so x is equal to true now. 
+</pre>
 **g)** `var x; x == 'undefined'`
 
+<pre> 
+with no definition, x is technically undefined, the number, not the string. 
+</pre>
 **h)** `'9'<'10'`
 
+<pre> 
+True
+</pre>
 **i)** `typeof x + 1 === "number"`
 
+<pre>
+this will always includde a string value, so it is false. 
+</pre>
 **j)** `typeof x % 2 === "number"`
 
+<pre> 
+false in all cases, since a % operator is invalid on a non-number, and will throw a NaN. 
+</pre>
 **k)** `typeof (x % 2) === "number"`
+<pre> 
+True, if x is a number. False otherwise.
+</pre>
 
 **l)** `x++ == ++x`
+<pre> 
+Always false, since the increment comes after the variable. 
+</pre>
 
 **m)** `++x == x++`
+<pre> 
+True for numbers. 
+</pre>
+
 
 **n)** `"1"+x == 1+x`
+<pre> 
+true id x is a string. 1James == 1James
+</pre>
 
 **o)** `"0"+1 == 1`
+<pre> 
+true. == will try and makes this work. 
+</pre>
 
 **p)** `(typeof (x+1))===(typeof x)`	
+<pre> 
+true if X is a number, or a string. Nothing else. 
+</pre>
 
 **q)** `(x*1 == x) || ((typeof x) != "number")`
+<pre> 
+</pre>
 
 **r)** `(x=(typeof (x+(typeof x))))==x`
+<pre> 
+We are assigning a value to X, so it is always true. 
+</pre>
 
 ---
 
@@ -62,10 +116,28 @@ Assume variables x, y, and z are numbers.
 **a)**
 Write an expression for the mean (i.e. average) of x, y, and z.
 
+<pre>
+I did both below. 
+</pre>
 **b)**
 Write a series of expressions to adjust each of x, y, and z halfway toward their mean.
 That is, reset the value of each variable to something based on its previous value.
 
+<pre> 
+function problem2b() {
+
+    var x = 3;
+    var y = 4;
+    var z = 5;
+
+    var m = (x+y+z) / 3;
+
+    x += (m-x)/2;
+    y += (m-y)/2;
+    z += (m-z)/2;
+
+};
+</pre>
 ---
 
 **3)** (_Difficulty: easyish_)
@@ -80,8 +152,10 @@ Suppose you're encoding geometric shapes in a Cartesian (2D) coordinate system, 
 **a)**
 Write an expression for the rectangle's area.
 
+
 **b)**
 Write an expression which is true if the rectangle is taller than it is wide, and false otherwise.
+
 
 **c)**
 Write an expression for the circumference of the biggest circle which can fit inside the rectangle.  (Hint: you'll need logic similar to that in **b**.)
@@ -93,6 +167,36 @@ Write an expression for the area of the smallest circle which completely enclose
 Imagine subdividing your rectangle into 3 equal rows and 3 equal columns, which would create 9 smaller rectangles, identical in shape but varying by position.
 Define four new variables describing the centermost small rectangle.
 (_Hint: one of the many solutions is very similar to the solution of **2b** above._)
+<pre> 
+function problem3() {
+    //3a
+    var width = r - l;
+    var height = b - t;
+    var area = width * height;    
+
+
+
+    //3b
+    var isTallerThanWide = height > width;
+
+    //3c
+   
+
+   //3d
+    var smallestRadius = Math.min(width,height) / 2;
+    var smallestCircleArea = ((smallestRadius*MathPI)*(smallestRadius*MathPI))
+ 
+   //3e)
+    var widthUnit = width / 3;
+    var heightUnit = height / 3;
+
+    var cl = l + widthUnit;
+    var cr = r - widthUnit;
+    var ct = t + heightUnit;
+    var cb = b - heightUnit;
+};
+
+</pre>
 
 ---
 
@@ -104,6 +208,7 @@ Imagine that the squares of an ordinary checkerboard are numbered in two differe
 
 * Each square has a unique integer number N from 0 to 63.  These numbers run sequentially left-to-right one row at a time, top to bottom.  Therefore the upper-left square has N==0 and the bottom-right has N==63.
 
+
 **a)**  Given a particular R and C, find the corresponding N.  That is, write an expression for variable N containing variables R and C.
 
 **b)**  Given N, find R.  Write an expression for R which contains N.
@@ -114,7 +219,28 @@ Imagine that the squares of an ordinary checkerboard are numbered in two differe
 Write an expression to set a variable _color_ to either 'black' or 'white', describing the square identified by variables R,C, and N.
 (_Hint: If you prefer, you may use a pair of conditional statements instead of a single expression._)
 
----
+<pre>
+    var width = 8;     //width (and height) of checkerboard
+    var r = 2;      //arbitrary row
+    var c = 3;      //arbitrary column
+
+    //3a
+    var n = (r * width) + c;
+
+    //3b
+    var findR = Math.floor(n/width);
+    //3c
+    var findC = n % width;
+
+    //3d
+    var isBlack = (n % 2) == (r % 2); //if the number and row are BOTH odd or BOTH even, the square is black.
+    var isWhite = (n % 2) !== (r % 2); //number and row are opposite parity
+
+    var isWhite2 = (n % 2) !== (Math.floor(n/width) % 2 );
+    var isBlack2 = (n % 2) == (Math.floor(n/width) % 2 );
+}
+
+</pre>
 
 **5)** (_Difficulty: moderate_)
 
@@ -123,3 +249,26 @@ If _n_ is greater than _d_, the fraction is "improper", but it can be rewritten 
 
 Write an expression for a string expressing the proper form of an improper fraction _n/d_.  For example, when _n==7_ and _d==4_, your resulting string should be "1 3/4".  You may assume both _n_ and _d_ are positive integers and _n_ > _d_, but otherwise you should be able to handle any values of _n_ and _d_.
 (_Hint: you'll need the modulo operator _%_, and you'll probably want to create a couple of extra variables._)
+
+<pre> 
+    var n = 7;
+    var d = 4;
+
+    var output = "";
+
+    var w = Math.floor(n/d);
+
+    if( w > 0) {
+        output += w + " ";
+    }
+
+    var nn = n % d;
+
+    if(nn > 0) {
+        output += nn + "/" + d;
+    }
+
+    console.log(output);
+}
+</pre>
+
