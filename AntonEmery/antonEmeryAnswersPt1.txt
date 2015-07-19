@@ -1,0 +1,70 @@
+1) (Difficulty: mixed) Predict the output of each of the following expressions, and explain the rules which determine it. If the output depends on the value of x, identify the conditions when the expression will output true. Assume the cases are independent, and x is reset to an unknown value before each.
+
+Some of these are tricky! Don't trust your first instinct.
+
+a) "1" == 1
+True. == is a loose comparison operator. it sees '1' and 1 as the same.
+
+b) "1" === 1
+False. === is a strict comparison operator and does not see the two as equal
+
+c) x == 'x'
+will evaluate to true if x is a number, since == is truish. 
+
+d) x == (x+'')
+true if x is a number. 5+''='5' which is seen as equal to 5. also true if x is a string. 
+
+e) '' == ' '
+false. '' is an empty string and is false. 
+
+f) x = true
+true unless x is 0, NaN, or an empty string
+
+g) var x; x == 'undefined'
+x has been declared but not assigned a value, so it is undefined. but it is not equivalent to the string 'undefined'  this would be true if typeof x == 'undefined'
+
+h) '9'<'10'
+false. both are strings, so the first character of each is evaluated. 9 > 1
+
+i) typeof x + 1 === "number"
+always false. typeof x will either be a number, string, or boolean. adding 1 to that converts 1 to a string, so the result will never be number.
+
+j) typeof x % 2 === "number"
+always false
+
+k) typeof (x % 2) === "number"
+will produce true when x is a number. typeof the remainder is 'number'. will also produce true when x is a string, which results in NaN. typeof NaN returns 'number'
+
+l) x++ == ++x
+always false. x++ returns x before adding 1. ++x returns x after adding 1. so they would not be equal. 
+
+m) ++x == x++
+true if x is a number. ++x adds 1 and returns x. x++ returns x before adding 1. 
+
+n) "1"+x == 1+x
+will evaluate to true if x is a string, as the number 1 will be converted to a string
+
+o) "0"+1 == 1
+truish.  '0' + 1 equals '01' which is == to 1
+
+p) (typeof (x+1))===(typeof x)
+true if x is a number or string. 
+
+q) (x*1 == x) || ((typeof x) != "number")
+returns true if x is a number. the left side evaluates to true which is enough. returns true if x is a boolean, as the right side evalautes to true. 
+
+(x=(typeof (x+(typeof x))))==x
+true for whatever you set x to. this is because at the end we are setting x = whatever, which affects the other side. 
+
+
+
+
+
+
+
+
+
+
+
+
+

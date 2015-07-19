@@ -1,0 +1,20 @@
+Suppose you're encoding geometric shapes in a Cartesian (2D) coordinate system, and you represent a rectangle with four numeric variables:
+
+l : horizontal position of left edge;
+r : horizontal position of right edge;
+t : vertical position of top edge;
+b : vertical position of bottom edge.
+
+a) Write an expression for the rectangle's area.
+area = (t - b) * (r - l)
+
+b) Write an expression which is true if the rectangle is taller than it is wide, and false otherwise.
+(t-b) > (r - l)
+
+c) Write an expression for the circumference of the biggest circle which can fit inside the rectangle. (Hint: you'll need logic similar to that in b.)
+2pi((r-l)/2)
+
+d) Write an expression for the area of the smallest circle which completely encloses (i.e. circumscribes) the rectangle.
+r = (Math.sqrt((t - b) + (r - l))) / 2
+
+e) Imagine subdividing your rectangle into 3 equal rows and 3 equal columns, which would create 9 smaller rectangles, identical in shape but varying by position. Define four new variables describing the centermost small rectangle. (Hint: one of the many solutions is very similar to the solution of 2b above.)
